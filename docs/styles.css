@@ -1,18 +1,22 @@
 /* 針對包含中文的標題設定微軟正黑體 */
 body {
   font-family: "SentyVanilla"!important;
+  background-color: #F5EFE7;
+  font-weight: normal; /* 內文字體不加粗 */
 }
 
 p {
   font-family: "SentyVanilla"!important;
+  cpolor: #4D4D4D; /* 設定內文顏色為黑色 */
+  font-weight: normal; /* 內文字體不加粗 */
 }
 
 h1 {
-    color: blue; /* 將標題顏色設為藍色 */
+    color: #C7B299; /* 將標題顏色設為藍色 */
     font-family: "SentyVanilla"!important;
 }
   
 h2 {
-    color: green; /* 將次標題顏色設為綠色 */
+    color: #A68B5B; /* 將次標題顏色設為綠色 */
     font-family: "SentyVanilla"!important;
 }

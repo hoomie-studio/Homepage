@@ -6,7 +6,7 @@ project:
 website:
   title: "Hoomie studio"
   navbar:
-    backgroundcolor: '#808080'
+    backgroundcolor: '#c2bdb5'
     left:
       - href: index.qmd
         text: Home
@@ -18,7 +18,6 @@ format:
     theme: sketchy
     css: styles.css
     toc: true
-    fontcolor: '#808080'
     monofont: courier new
     editor: visual
 
