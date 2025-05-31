@@ -2,12 +2,13 @@
 body {
   font-family: "SentyVanilla"!important;
   background-color: #F5EFE7;
+  color: #483507; /* 設定內文顏色為黑色 */
   font-weight: normal; /* 內文字體不加粗 */
 }
 
 p {
   font-family: "SentyVanilla"!important;
-  cpolor: #4D4D4D; /* 設定內文顏色為黑色 */
+  color: #483507; /* 設定內文顏色為黑色 */
   font-weight: normal; /* 內文字體不加粗 */
 }
 
