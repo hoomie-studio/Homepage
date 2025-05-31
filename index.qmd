@@ -1,5 +1,5 @@
 ---
-title: "LAB"
+title: "About me"
 #about: trestles
 --- 
 
