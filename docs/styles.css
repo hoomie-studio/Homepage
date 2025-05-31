@@ -13,11 +13,16 @@ p {
 }
 
 h1 {
-    color: #C7B299; /* 將標題顏色設為藍色 */
+    color: #A68B5B; /* 將標題顏色設為藍色 */
     font-family: "SentyVanilla"!important;
 }
   
 h2 {
-    color: #A68B5B; /* 將次標題顏色設為綠色 */
+    color: #483507; /* 將次標題顏色設為綠色 */
+    font-family: "SentyVanilla"!important;
+}
+  
+h3 {
+    color: #483507; /* 將次標題顏色設為綠色 */
     font-family: "SentyVanilla"!important;
 }
