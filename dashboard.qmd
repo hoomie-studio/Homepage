@@ -3,14 +3,14 @@ title: "Cigarettes life"
 format: 
   dashboard:
     orientation: columns
+    css: styles.css
 ---
 
 ## Column 1{width="20%",height="100%"}
 
 ### Row {height="30%"}
 
-GOD DAMN MUSIC
-{{< video https://youtu.be/RkNatCDuWmM?si=85QCKecU7MuHuu3N>}}
+GOD DAMN MUSIC {{< video https://youtu.be/RkNatCDuWmM?si=85QCKecU7MuHuu3N>}}
 
 ### Row {height="70%"}
 
@@ -20,16 +20,15 @@ GOD DAMN MUSIC
 
 ### Row {height="10%"}
 
-**PROCESS**
+PROCESS
 
 ### Row {height="30%"}
 
 根據稅籍資料集，將產業予以分類編碼，並執行地址轉座標的結果，右圖是全台特種行業群聚分布圖
 
-
 ### Row {height="70%"}
 
-**CITY MODELING**
+CITY MODELING
 
 2024年電腦輔助設計之寒假作業。由於茶室文化老街的興衰，有感於此特別保留西園路之巴洛克式街廓， 讓老街的傳統風華再現，參照實際街景製作而成 {{< video https://youtu.be/KS2CdOuROXI?si=cqepDMJwsjgON4-x >}}
 
@@ -37,10 +36,17 @@ GOD DAMN MUSIC
 
 ### Row {height="70%"}
 
-Taiwan special industry. <iframe src="台灣阿公店2.html" width="100%" height="700">
+Taiwan special industry. 
+  
+<iframe src="台灣阿公店2.html" width="100%" height="700">
 
-<button id="fly-to-button">移動到指定座標</button>
+<button id="fly-to-button">
 
+移動到指定座標
+
+</button>
+
+```{=html}
 <script>
 const flyToButton = document.getElementById('fly-to-button');
 const agongdianIframe = document.getElementById('agongdian-iframe');
@@ -55,3 +61,4 @@ flyToButton.addEventListener('click', () => {
   );
 });
 </script>
+```

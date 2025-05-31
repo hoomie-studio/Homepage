@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  
+
 website:
   title: "Hoomie studio"
   navbar:
@@ -11,8 +13,6 @@ website:
       - about.qmd
       - research.qmd
       - dashboard.qmd
-
-    
 format:
   html:
     theme: sketchy
@@ -20,5 +20,8 @@ format:
     toc: true
     fontcolor: '#808080'
     monofont: courier new
+    editor: visual
 
-editor: visual
+
+      
+    

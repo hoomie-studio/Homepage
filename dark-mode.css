@@ -1,0 +1,103 @@
+
+/*______________________________________________________________________*/
+h1,h2,h3,h4{
+    font-family: "SentyVanilla", sans-serif !important; /* 設定NSimSun字體 */
+} 
+
+/* 移除卡片或面板的背景色，使其透明 */
+.card {
+    background-color: transparent !important; /* !important 用於強制覆蓋預設樣式 */
+    border: none !important; /* 移除邊框，如果有的話 */
+    color: #e0e0e0;
+}
+
+.even {
+    height: 300px !important; /* 根據需要調整高度 */
+    overflow-y: auto; /* 內容過多時啟用滾動條 */
+    box-sizing: border-box;    width: 20% !important;
+
+}
+body {
+    background-color: #121212; /* 深色背景 */
+    color: #e0e0e0;
+    font-weight: normal; /* 內文字體不加粗 */
+    font-family: "SentyVanilla", sans-serif !important; /* 設定NSimSun字體 */
+}
+
+/*______________________________________________________________________*/
+
+h1 {
+    color:#FCEDEA; /* 標題顏色 */
+}
+
+h2 {
+    color: #FCEDEA; /* 標題顏色 */
+    font-weight: normal; /* 內文字體不加粗 */
+
+}
+
+h3 {
+    color: #ffcdff; /* 標題顏色 */
+    font-weight: normal; /* 內文字體不加粗 */
+}
+
+h4 {
+    color: #FCEDEA; /* 標題顏色 */
+}
+#Q: 如何定義內文的顏色?
+
+p { 
+    color: #e0e0e0; /* 內文顏色 */
+    font-weight: normal; /* 內文字體不加粗 */
+}
+
+code  {
+  font-family: 'Courier New', Courier, monospace; /* 設置字體 */
+  background-color: #F8B9C4; /* 深色背景 */
+  color: #000000; /* 設置顏色 */
+  font-weight: normal; /* 內文字體不加粗 */
+} 
+
+.highlight-pink {
+  background-color: #F8B9C4; /* 深色背景 */
+  color: #000000; /* 設置顏色 */
+  padding: 2px 4px; /* 增加一些內邊距，讓背景更好看 */
+  border-radius: 3px; /* 輕微圓角 */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* 添加陰影 */
+  font-weight: normal; /* 內文字體不加粗 */
+  text-align: center; /* 文字置中 */
+}
+
+
+
+.highlight-conclusion {
+  background-color: #F8B9C4; /* 深色背景 */
+  color: #000000; /* 設置顏色 */
+  padding: 2px 4px; /* 增加一些內邊距，讓背景更好看 */
+  border-radius: 3px; /* 輕微圓角 */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* 添加陰影 */
+  font-weight: normal; /* 內文字體不加粗 */
+  text-align: center; /* 文字置中 */
+  font-size: 2em; /* 調整字體大小 */
+}
+
+.highlight-best {
+  background-color: #ffffa1; /* 深色背景 */
+  color: #000000; /* 設置顏色 */
+  padding: 2px 4px; /* 增加一些內邊距，讓背景更好看 */
+  border-radius: 3px; /* 輕微圓角 */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* 添加陰影 */
+  font-weight: normal; /* 內文字體不加粗 */
+  text-align: center; /* 文字置中 */
+}
+
+
+.highlight-worst {
+  background-color: #e0e0e0; /* 深色背景 */
+  color: #000000; /* 設置顏色 */
+  padding: 2px 4px; /* 增加一些內邊距，讓背景更好看 */
+  border-radius: 3px; /* 輕微圓角 */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* 添加陰影 */
+  font-weight: normal; /* 內文字體不加粗 */
+  text-align: center; /* 文字置中 */
+}

@@ -1,10 +1,18 @@
 /* 針對包含中文的標題設定微軟正黑體 */
-h1:lang(zh), h2:lang(zh), h3:lang(zh), h4:lang(zh), h5:lang(zh), h6:lang(zh) {
-  font-family: "Microsoft JhengHei", sans-serif !important;
+body {
+  font-family: "SentyVanilla"!important;
 }
 
-/* 覆蓋可能影響中文標題的其他字體設定 */
-h1, h2, h3, h4, h5, h6 {
-  font-family: sans-serif !important; /* 設定一個安全的預設非襯線字體 */
+p {
+  font-family: "SentyVanilla"!important;
 }
 
+h1 {
+    color: blue; /* 將標題顏色設為藍色 */
+    font-family: "SentyVanilla"!important;
+}
+  
+h2 {
+    color: green; /* 將次標題顏色設為綠色 */
+    font-family: "SentyVanilla"!important;
+}
