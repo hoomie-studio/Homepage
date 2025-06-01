@@ -5,21 +5,54 @@ format:
     css: styles.css
     orientation: rows
     scrolling: true
---- 
+---
 
-### 我的履歷請見下方:
+一位學習都市計畫與空間資訊領域的大學生，雖然常常出包，但仍然努力學習，並鑽研空間資訊， 目前所學習的知識包含ARCGIS、QGIS、R語言、Python、HTML、CSS、JavaScript等。將他們與空間規劃結合， 並應用於實際的規劃案例中。希望能夠在未來的學習和工作中，繼續提升自己的技能和知識，為城市規劃和空間資訊領域做出貢獻。 但其實我也會三維建模例如SKETCHUP等，在一些競賽中取得不錯的成果。
 
-<div class="pdf-container">
-  <iframe src="洪名佑履歷.pdf #toolbar=0&zoom=100" width="800" height="1100" type="application/pdf"></iframe>
-</div>
+## 我的技能
+
+GIS軟體：熟悉ARCGIS、QGIS等地理資訊系統軟體，能夠進行空間分析、地圖製作等工作。
+
+## 萬華茶室老街再生計畫
+
+2024年電腦輔助設計之寒假作業。由於茶室文化老街的興衰，有感於此特別保留西園路之巴洛克式街廓， 讓老街的傳統風華再現，參照實際街景製作而成 {{< video https://youtu.be/KS2CdOuROXI?si=cqepDMJwsjgON4-x >}}
+
+## 台北探索校內專題
+
+[應用GIS探討不同社會經濟族群的空間不平等 — 以公園用地為例](https://utsus.utaipei.edu.tw/p/404-1112-119743.php?Lang=zh-tw)
+
+## 北市大創新創業競賽第二名 
+
+ 建構納博聚思空間不動產資訊整合平台創業提案
+
+## 台北生命故事暨健康科技園區
+
+（臺北市政府青年局113年度公共政策創意提案暨辯論競賽）入圍決賽
+
+{{< video https://www.youtube.com/watch?v=8cql6MCz5cg >}}
+
+<hr>
+
+#### 我的履歷請見下方:
 
 
-<button id="download-button">下載履歷</button>
+::: pdf-container
+<iframe src="CV.pdf #toolbar=0&amp;zoom=100" width="800" height="1100" type="application/pdf">
 
+</iframe>
+:::
+
+<button id="download-button">
+
+下載履歷
+
+</button>
+
+```{=html}
 <script>
   const downloadButton = document.getElementById('download-button');
   downloadButton.addEventListener('click', () => {
-    window.open('洪名佑履歷.pdf', '_blank');
+    window.open('CV.pdf', '_blank');
   });
-</script>  
-
+</script>
+```

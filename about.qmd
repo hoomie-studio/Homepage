@@ -1,5 +1,5 @@
 ---
-title: "酒吧模式"
+title: "darkmode"
 format:
   dashboard:
     css: dark-mode.css # 假設這是主要的 CSS 檔案

@@ -103,7 +103,7 @@ code  {
 }
   
 a {
-    color:#e0e0e0; /* 連結文字顏色 */
+    color:white; /* 連結文字顏色 */
     text-decoration: none; /* 移除下劃線 */
 }
 a:hover {
