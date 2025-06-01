@@ -101,3 +101,18 @@ code  {
   font-weight: normal; /* 內文字體不加粗 */
   text-align: center; /* 文字置中 */
 }
+  
+a {
+    color:#e0e0e0; /* 連結文字顏色 */
+    text-decoration: none; /* 移除下劃線 */
+}
+a:hover {
+    color: #F8B9C4; /* 滑鼠懸停時的連結文字顏色 */
+    text-decoration: underline; /* 滑鼠懸停時添加下劃線 */
+}
+#q: 我要怎麼修改參考文獻連結的文字顏色?
+
+a.reference-link {
+    color: #e0e0e0; /* 參考文獻連結文字顏色 */
+    text-decoration: none; /* 移除下劃線 */
+}

@@ -2,7 +2,7 @@
 body {
   font-family: "SentyVanilla"!important;
   background-color: #F5EFE7;
-  color: #483507; /* 設定內文顏色為黑色 */
+  color: #C7B299; /* 設定內文顏色為黑色 */
   font-weight: normal; /* 內文字體不加粗 */
 }
 
@@ -12,17 +12,23 @@ p {
   font-weight: normal; /* 內文字體不加粗 */
 }
 
-h1 {
+h1 ,h3,h4 {
     color: #A68B5B; /* 將標題顏色設為藍色 */
     font-family: "SentyVanilla"!important;
 }
   
 h2 {
-    color: #483507; /* 將次標題顏色設為綠色 */
+    color: #797979; /* 將次標題顏色設為綠色 */
     font-family: "SentyVanilla"!important;
 }
-  
-h3 {
-    color: #483507; /* 將次標題顏色設為綠色 */
-    font-family: "SentyVanilla"!important;
+
+#Q:我要把版面拉寬
+.even {
+    width: 80% !important; /* 設定寬度為20% */
+    height: 1000px !important; /* 根據需要調整高度 */
+    overflow-y: auto; /* 內容過多時啟用滾動條 */
+    box-sizing: border-box; /* 包括padding和border在內的寬度計算 */
 }
+
+
+
