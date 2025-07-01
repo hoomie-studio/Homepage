@@ -40,7 +40,7 @@ Taiwan special industry.
   
 <iframe src="台灣阿公店2.html" width="100%" height="700">
 
-<button id="fly-to-button">
+
 
 移動到指定座標
 

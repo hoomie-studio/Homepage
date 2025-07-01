@@ -1,0 +1,135 @@
+---
+title: "自我介紹 <hr>"
+author: "臺北市立大學 城發三 洪名佑<br>自強工程顧問公司"
+format:
+  revealjs:
+    width: 1920  # 設定寬度為 1920px（適應常見投影比例）
+    height: 1080
+    margin: 0.1 # 設定邊距為 0
+    highlight-style: github
+    background: #F7EEDD
+    css: styles.css
+    slide-number: true
+    center: true
+    controls: true
+    progress: true
+    background-size: cover
+    background-position: center
+    background-transition: fade
+    controlsLayout: "edges"
+    controlsTutorial: false
+    controlsBackArrows: "faded"
+    controlsProgress: true
+    controlsSkip: true
+    transition: fade
+    footer: "©HUNG MING YU"
+---
+
+## 我來自的學校
+
+::::: r-stretch
+::: {.column width="45%"}
+<br>
+**台北市立大學：**
+
+-   我們有兩個校區，天母和博愛校區，城發系在天母，有點偏僻
+<hr>
+-   就讀城市發展學系，主要專業是城市規劃與地理資訊系統 (GIS)，目前為大三學生
+<hr>
+-   雖然我們核心不是測量但是在規劃過程中經常用到GIS，有了這項工具後能讓我事半功倍
+，比起每張圖都熬夜加班進到繪圖軟體描繪快了許多。
+<hr>
+:::
+::: {.column width="10%"}
+::: 
+::: {.column width="45%"}
+![](https://www.overseas.edu.tw/wp-content/uploads/2020/10/%E5%8C%97%E5%B8%82%E5%A4%A75-1024x682.jpg)
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## 關於我 About me
+
+::::: r-stretch
+::: {.column width="60%"}
+**興趣：**
+
+-   最喜歡的事情是。
+-   平常活動 打羽球、籃球、不愛看書。
+-   喜歡的音樂 電音、Hip-hop、。
+-   飲食習慣 挑食不吃豬、喜歡吃辣。
+-   
+
+**嗜好：**
+
+-   喜歡研究都市，有空就會往外縣市跑
+-   旅遊、健身，通常在學校健身房、板橋三劍客
+:::
+
+::: {.column width="40%"}
+![](https://scontent.ftpe9-1.fna.fbcdn.net/v/t39.30808-6/461689540_2578404065881378_4016238970570335273_n.png?_nc_cat=100&ccb=1-7&_nc_sid=0b6b33&_nc_ohc=RYkb4REF2HoQ7kNvwFkCORN&_nc_oc=AdkeHMtU7G9t7xeGB0G437E30at7AnwIRF1Q24_XyNS2I5W-gB_EismdwKkKBLWTO1E&_nc_zt=23&_nc_ht=scontent.ftpe9-1.fna&_nc_gid=6JO-RlTUx5lqe4VC4liyQg&oh=00_AfPd7ljRLu137S5A1rzdpR-xXRpiSIBhPXcz9mthv96khw&oe=6861610B){fig-align="center" width="90%"}
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## 當興趣遇到GIS
+
+::::: r-stretch
+::: {.column width="60%"}
+<br>
+
+
+
+**因為跑山而認識 DEM?**
+
+-   這個興趣源自於我喜歡跑山，大一時騎著BWS發現跑山的時候會有很多測速照相。於是我就開始研究跑山路線，因為測速照相太多，從而透過DEM評估公路系統的坡度、測速照相點位等特性，進而了解哪裡適合跑山，並且是安全的。
+-   最初透過以QGIS建立跑山模型，然後加上套疊製作台七乙跑山路線圖，並且透過插件製作跑山路線的3D視覺化。
+  這個興趣讓我開始關注GIS領域，後面則製作更多自己的小研究。
+<br>
+![](https://cs-a.ecimg.tw/items/DXBK01A900GIYHV/l000003_1750998888.jpg){fig-align="center" width="40%"}我的機車BWS 125
+:::
+
+::: {.column width="40%"}
+![](https://cs-a.ecimg.tw/items/DXBK01A900GIYHV/l000003_1750998888.jpg){fig-align="center" width="90%"}
+:::
+
+:::::
+
+------------------------------------------------------------------------
+
+## 目前關注的方向與願景
+
+
+::: r-stretch
+<br>
+
+**透過遙測影像監測以色列開戰時的SO2**
+**公園綠地公平性**
+**公園綠地配置對於不同社會經濟族群是否公平**
+**萬華街區的建模**
+
+-   雖然我們系學了很多都市更新的知識，我還是有些期許，自己是個念舊的人，三維點雲可以保存都市風采和紋理希望
+來到這邊好好學習這項技術
+
+:::
+
+------------------------------------------------------------------------
+
+## 願景
+
+::: r-stretch
+<br>
+**希望來這裡能學到什麼 ?**
+
+-   自己喜歡模型，也希望能把這套三維圖資作業方式弄懂，從數據生成到圖資如何應用
+-   向大家還有實習生多加學習，保持積極向上的工作態度
+-   雖然我們系學了很多都市更新的知識，多數人談論價格與能夠分回多少坪數，卻沒人關注即將被拆掉的建築物。自己是個念舊的人，三維點雲可以保留都市風采和紋理，期許來到這邊好好學習這項技術 !
+
+<br>
+
+:::
+
+## 謝謝大家!
+

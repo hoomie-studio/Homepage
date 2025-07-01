@@ -8,11 +8,11 @@ body {
 
 p {
 
-  color: #483507; /* 設定內文顏色為黑色 */
+  color: #dd6236; /* 設定內文顏色為黑色 */
   font-weight: normal; /* 內文字體不加粗 */
 }
 
-h1,h2 {
+h1,h2  {
     color: #A68B5B; /* 將標題顏色設為藍色 */
     font-family: "SentyVanilla"!important;
 }

@@ -21,8 +21,9 @@ GIS在城市規劃、環境管理、交通運輸等領域有廣泛的應用。�
 
 點擊這裡查看更多：
 
-<div class="pdf-container">
-  <iframe src="QGIS advance-1.pdf #toolbar=0&zoom=50" width="120%" height="550px" type="application/pdf"></iframe>
-</div>
+
+<iframe src="QGIS advance-1.html" zoom=30 width="120%" height="550px">
+
+
 
 
