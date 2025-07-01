@@ -15,11 +15,13 @@ p {
 h1,h2  {
     color: #A68B5B; /* 將標題顏色設為藍色 */
     font-family: "SentyVanilla"!important;
+    src: url('./font/SentyVanilla.ttf') format('truetype');
 }
   
 h3, h4 {
     color: #5c5c5c; /* 將次標題顏色設為綠色 */
     font-family: "SentyVanilla"!important;
+    src: url('./font/SentyVanilla.ttf') format('truetype');
 }
 
 #Q:我要把版面拉寬
