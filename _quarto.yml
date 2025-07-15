@@ -14,6 +14,7 @@ website:
       - dashboard.qmd
       - note.qmd
       - 串接API教學筆記.qmd
+      - maps.qmd
 format:
   html:
     theme: sketchy
@@ -22,6 +23,7 @@ format:
     monofont: courier new
     editor: visual
 
-
+      # - about.qmd
+      # - maps.qmd
       
     
