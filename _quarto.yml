@@ -14,7 +14,6 @@ website:
       - dashboard.qmd
       - note.qmd
       - 串接API教學筆記.qmd
-      - 自我介紹.qmd
 format:
   html:
     theme: sketchy
