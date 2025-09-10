@@ -61,8 +61,13 @@ h3, h4 {
 .float-left {
   float: left; /* 讓圖片浮動在左側 */
   margin-right: 20px; /* 在圖片右側增加間距，避免文字緊貼圖片 */
-  margin-bottom: 20px; /* 在圖片下方增加間距 */
+  margin-bottom: 0px; /* 在圖片下方增加間距 */
+  border-radius: 50%; /* 新增：讓圖片變成圓形 */
+  /* 確保圖片是正方形才能完美圓形，或至少寬高接近 */
+  /* 如果圖片本身不是正方形，它會變成橢圓形 */
+  object-fit: cover; /* 讓圖片填滿圓形區域，可能裁切邊緣 */
 }
+
 
 #Q:我要把版面拉寬
 .even {

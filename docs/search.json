@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "About me",
     "section": "",
-    "text": "一位學習都市計畫與空間資訊領域的大學生，雖然常常出包，但仍然努力學習，並鑽研空間資訊， 目前所學習的知識包含ARCGIS、QGIS、R語言、Python、HTML、CSS、JavaScript等。將他們與空間規劃結合， 並應用於實際的規劃案例中。希望能夠在未來的學習和工作中，繼續提升自己的技能和知識，為城市規劃和空間資訊領域做出貢獻。 但其實我也會三維建模例如SKETCHUP等，在一些競賽中取得不錯的成果。"
+    "text": "一位學習都市計畫與空間資訊領域的大學生，雖然常常出包，但仍然努力學習，並鑽研空間資訊， 目前所學習的知識包含ARCGIS、QGIS、R語言、Python、HTML、CSS、JavaScript等。將他們與空間規劃結合， 並應用於實際的規劃案例中。希望能夠在未來的學習和工作中，繼續提升自己的技能和知識，為城市規劃和空間資訊領域做出貢獻。 但其實我也會三維建模例如SKETCHUP等，在一些競賽中取得不錯的成果。   下載履歷"
   },
   {
     "objectID": "about.html",
@@ -179,7 +179,7 @@
     "href": "index.html#萬華茶室老街再生計畫",
     "title": "About me",
     "section": "萬華茶室老街再生計畫",
-    "text": "萬華茶室老街再生計畫\n2024年電腦輔助設計之寒假作業。由於茶室文化老街的興衰，有感於此特別保留西園路之巴洛克式街廓， 讓老街的傳統風華再現，參照實際街景製作而成 \n\n鄰里居住偏好調查問卷:\n\n\n&lt;p&gt;載入中…&lt;/p&gt;\n\n\n\n下載履歷"
+    "text": "萬華茶室老街再生計畫\n2024年電腦輔助設計之寒假作業。由於茶室文化老街的興衰，有感於此特別保留西園路之巴洛克式街廓， 讓老街的傳統風華再現，參照實際街景製作而成"
   },
   {
     "objectID": "index.html#臺北市政府青年局殯提案規劃競賽",
@@ -474,5 +474,12 @@
     "title": "Hoomie studio",
     "section": "",
     "text": "{width=“20px”, height=“300px”}\n每種場域存在地域性，因此才會出現 北中南東各有不同的特質， 認為顧客會傾向選擇離家較近的店家，這樣可以節省時間和交通成本，並且更容易形成穩定的客源。\n\n\n\n\n{width=“20%”, height=“300px”}\n參考文獻\n\n\n{width=“20%”, height=“300px”}\n\n\n珍雅各的理論\n\n\n樓鳳，性淘金產業大揭密：警察帶路，立馬看懂江湖規矩，菜雞一夜成為老司機，乖乖女聽懂所有men’s talk\n\n\n我在荷蘭當都更說客：阿姆斯特丹以人為本的10年街區再生筆記\n\n\n手槍女王 HAND JOB QUEEN：一個從業職人的真情告白\n\n\nA Network Approach to Examine Neighborhood Interdependence Through the Target Selection of Repeat Buyers of Commercial Sex in the United States\n\n\nWhere and why do illicit businesses cluster? Comparing sexually oriented massage parlors in Los Angeles County and New York City\n\n\nWhy are You Here? Modeling Illicit Massage Business Location Characteristics with Machine Learning\n\n\nWhat makes neighbourhood-level commercial centres attractive for neighbourhood residents?\n\n\nThe Red-Light Network: Exploring the Locational Strategies of Illicit Massage Businesses in Houston, Texas"
+  },
+  {
+    "objectID": "index.html#鄰里居住偏好調查問卷",
+    "href": "index.html#鄰里居住偏好調查問卷",
+    "title": "About me",
+    "section": "鄰里居住偏好調查問卷",
+    "text": "鄰里居住偏好調查問卷"
   }
 ]
