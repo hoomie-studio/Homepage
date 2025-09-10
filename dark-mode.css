@@ -118,11 +118,13 @@ a.reference-link {
 }
 
 .navbar {
-  background-color: #232121; /* 設定 Navbar 的背景顏色，這裡是深藍色 */
+  background-color: #0F0F0F; /* 設定 Navbar 的背景顏色，這裡是深藍色 */
+  border-bottom: 2px solid #0F0F0F; /* 設定 Navbar 底部邊框顏色 */
+  opacity: 0.8; /* 設定透明度 */
 }
 
 .navbar-brand, .navbar a {
-  color: #e0e0e0 !important; /* 設定 Navbar 上的品牌文字與連結顏色為白色 */
+  color: #F2BAC9 !important; /* 設定 Navbar 上的品牌文字與連結顏色為白色 */
 }
 .navbar-brand:hover, .navbar a:hover {
   color: #A68B5B !important; /* 設定 Navbar 上的品牌文字與連結懸停顏色為淺藍色 */
