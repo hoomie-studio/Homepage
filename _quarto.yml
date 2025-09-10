@@ -6,16 +6,13 @@ project:
       
 website:
   title: "Hoomie studio"
-  page-footer: "© 2025 Hoomie studio"
   navbar:
     backgroundcolor: '#F7EEDD'
     left:
       - href: index.qmd
-        text: Home
-      - research.qmd
-      - dashboard.qmd
-      - note.qmd
-      - 串接API教學筆記.qmd
+        text: Home 主頁
+      - exp.qmd
+      - project.qmd
       - about.qmd
       - maps.qmd
     right:

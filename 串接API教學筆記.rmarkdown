@@ -1,5 +1,5 @@
 ---
-title: "串接API教學筆記"
+title: "API NOTE"
 format: 
   html: # 注意這裡，html 後面有一個冒號，表示它是一個鍵，其值是下面的設定
     toc: true # 這是 table of content 目錄
@@ -137,3 +137,5 @@ ggplot(formosa_massage, aes(x = 縣市, fill = 土地使用名稱)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) 
 
 ```
+
+
