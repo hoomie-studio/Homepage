@@ -113,6 +113,17 @@ a:hover {
 #q: 我要怎麼修改參考文獻連結的文字顏色?
 
 a.reference-link {
-    color: #e0e0e0; /* 參考文獻連結文字顏色 */
+    color: ; /* 參考文獻連結文字顏色 */
     text-decoration: none; /* 移除下劃線 */
+}
+
+.navbar {
+  background-color: #232121; /* 設定 Navbar 的背景顏色，這裡是深藍色 */
+}
+
+.navbar-brand, .navbar a {
+  color: #e0e0e0 !important; /* 設定 Navbar 上的品牌文字與連結顏色為白色 */
+}
+.navbar-brand:hover, .navbar a:hover {
+  color: #A68B5B !important; /* 設定 Navbar 上的品牌文字與連結懸停顏色為淺藍色 */
 }

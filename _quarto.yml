@@ -1,8 +1,9 @@
 project:
   type: website
   output-dir: docs
-  
 
+
+      
 website:
   title: "Hoomie studio"
   navbar:
@@ -14,14 +15,23 @@ website:
       - dashboard.qmd
       - note.qmd
       - 串接API教學筆記.qmd
+      - about.qmd
       - maps.qmd
+    right:
+      - icon: github # 使用 GitHub 圖標
+        href: https://github.com/hoomie-studio
+      - icon: envelope # 使用信封圖標
+        href: mailto:您的電子郵件
+    theme:
+      light: simplex
+      dark: darkly
 format:
   html:
-    theme: sketchy
-    css: styles.css
-    toc: true
-    monofont: courier new
-    editor: visual
+    theme: sketchy #主題
+    css: styles.css #自訂css
+    toc: true #目錄
+    monofont: courier new #等寬字型
+    editor: visual #視覺化編輯器，可改成 source
 
       # - about.qmd
       # - maps.qmd
