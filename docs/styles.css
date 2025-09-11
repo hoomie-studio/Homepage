@@ -69,6 +69,29 @@ h3, h4 {
   /* 您可以根據喜好調整陰影的參數 */
 }
 
+/* 設定每個專案區塊的樣式 */
+.talk-item {
+  background-color: #FFFFFF;
+  border-left: 5px solid var(--quarto-link-color); /* 左側的垂直色塊 */
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 懸停時的效果 */
+.talk-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* 確保圖片填滿容器且比例不變 */
+.talk-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
 
 #Q:我要把版面拉寬
 .even {

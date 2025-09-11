@@ -23,7 +23,7 @@ format:
 </script>
 ```
 
-
+<br><hr>
 ### 興趣：
 
   騎著BWS 125跑山，享受風景和速度。喜歡建築模型但是美術不行。喜歡研究都市，喜歡探索不同的城市和文化。
@@ -34,7 +34,7 @@ format:
 ### 嗜好：
 
   旅遊，有空就會往外縣市跑或者國外、
-  健身，通常在學校健身房、板橋三劍客
+  健身，通常在學校健身房、板橋三健客
   
 ## 我的技能
 
@@ -54,7 +54,7 @@ format:
 
 ### 資料視覺化
 
-熟悉語言： R <br> 核心套件： ggplot2、plotly
+熟悉語言： R <br> 核心套件： ggplot2、plotly、leafmap
 :::
 :::::
 
@@ -73,7 +73,7 @@ format:
 :::::
 
 <br><hr>
-<iframe src="自我介紹.html" zoom=10 width="100%" height="450px">  
+<iframe src="自我介紹.html" zoom=10 width="100%" height="500px">  
 
 <hr>
 

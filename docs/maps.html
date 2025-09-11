@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>maps – Hoomie studio</title>
+<title>養生館尋訪地圖 – Hoomie studio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -103,14 +103,6 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Projects 作品</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./串接API教學筆記.html"> 
-<span class="menu-text">串接API教學筆記</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">zoning</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link active" href="./maps.html" aria-current="page"> 
 <span class="menu-text">maps</span></a>
   </li>  
@@ -134,23 +126,35 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#阿公店的分布特徵" id="toc-阿公店的分布特徵" class="nav-link active" data-scroll-target="#阿公店的分布特徵">阿公店的分布特徵</a>
+  <ul class="collapse">
+  <li><a href="#結論" id="toc-結論" class="nav-link" data-scroll-target="#結論">結論</a></li>
+  <li><a href="#最佳區位" id="toc-最佳區位" class="nav-link" data-scroll-target="#最佳區位">最佳區位</a></li>
+  <li><a href="#最差區位" id="toc-最差區位" class="nav-link" data-scroll-target="#最差區位">最差區位</a></li>
+  <li><a href="#參考文獻" id="toc-參考文獻" class="nav-link" data-scroll-target="#參考文獻">參考文獻</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">maps</h1>
+<h1 class="title">養生館尋訪地圖</h1>
 </div>
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page-left">
 
     
   
@@ -162,10 +166,81 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<iframe src="LEAFMAP.html" width="100%" height="100%">
-</iframe>
+<p>專案內容：結合leafmap各式定位功能以及撰寫geocoding，完成全台養生館商家地圖，當中羅列各式資訊 <br><br> <iframe src="LEAFMAP.html" width="100%" height="800"></iframe></p>
+<section id="阿公店的分布特徵" class="level2">
+<h2 class="anchored" data-anchor-id="阿公店的分布特徵">阿公店的分布特徵</h2>
+<p><br> 專注在空間資訊的研究者 支持專區的成立經過全台的盤點及調查我們可以大致觀察到以下的現象特徵: <br><br> <span class="highlight-pink">公園型</span></p>
+<p>首先是阿公店不知道為甚麼總是出現在公園旁邊，原因可能是公園是人們休閒的場所，阿公店提供了社交和放鬆的空間，吸引了許多老年人和工人階層前來聚集</p>
+<p><code>萬華艋舺公園</code> / <code>台中公園</code> / <code>高雄鳳山</code></p>
+<p><img src="鳳山.png" class="img-fluid" width="411"></p>
+<hr>
+<p><span class="highlight-pink">鐵支路型</span></p>
+<p>會群聚在鐵道附近理由可能是，鐵道旁一般人比較不容易行經也較為隱蔽，而且離車站不遠交通便利</p>
+<p><code>雲林虎尾鐵支路</code> / <code>基隆龍安路</code> / <code>台南新營糖廠</code></p>
+<p><img src="基隆.png" class="img-fluid" width="411"></p>
+<hr>
+<p><span class="highlight-pink">住商大樓</span></p>
+<p>再來則是馬路邊或是騎樓，由於交通方便，且會去這種店的客人許多為工人階層</p>
+<p><code>高雄的電信大樓</code> / <code>高雄九如路</code></p>
+<p><img src="電信大樓.png" class="img-fluid" width="411"></p>
+<hr>
+<p><span class="highlight-pink">傳統豆干厝</span></p>
+<p>最後則是傳統的豆干厝，這類店家通常會在巷弄內，可能會在軍營、暗巷或是鐵皮屋旁，且客人多為熟客， 環境較為簡陋</p>
+<p><code>西勢美豆干厝</code> / <code>萬華西園路巷弄的阿公店</code> / <code>桃園中壢的三仙巷</code> / <code>屏東榮民之家</code> / <code>台中豐原</code></p>
+<p><img src="三仙巷.png" class="img-fluid" width="411"></p>
+<hr>
+<p><span class="highlight-pink">工廠違建型</span></p>
+<p>這類店家通常會在工業區或是工廠附近，可能會在工業區的違建或是工廠的後門，且客人多為工人階層， 但根據理論來說此種區位最不適合開設阿公店，因為工業區的治安較差，晚上大家都下班回家，逗留在那裏 容易形成治安死角，沒有人可以保證你的安全</p>
+<p><code>桃園中壢的雙連坡</code> / <code>新竹榮光路上</code> / <code>彰化花壇鄉(已關閉)</code></p>
+<p><img src="榮光路.png" class="img-fluid" width="411"></p>
+<hr>
+<section id="結論" class="level3">
+<h3 class="anchored" data-anchor-id="結論">結論</h3>
+<p>這些阿公店的分布特徵顯示出它們與周圍環境的密切關聯，無論是公園、鐵道、住商大樓還是傳統豆干厝，都反映了社區文化和生活方式的多 樣性。這些店家不僅是社交場所，也是地方文化的一部分，承載著歷史和人情味。 但是有幾點必須要多加注意，根據珍雅各的理論其實專區應該設置在越熱鬧的地區，走在路上有路人幫忙監視起到鄰里 守望的作用，以保護顧客的安全，然而這些阿公店大多數都設置在偏僻的巷弄或是工業區，這樣的區位選擇可能會 導致治安問題，尤其是在夜晚時分，缺乏人流和監視可能會增加犯罪風險。對雙方都會造成困擾，顧客可能會因為安全問題而不願意光顧，而店家則可能面臨治安風險和經營困難。</p>
+</section>
+<section id="最佳區位" class="level3">
+<h3 class="anchored" data-anchor-id="最佳區位">最佳區位</h3>
+<p>商業區但不應過於繁忙只要存在部分人流就好，顧客也希望有隱蔽性</p>
+</section>
+<section id="最差區位" class="level3">
+<h3 class="anchored" data-anchor-id="最差區位">最差區位</h3>
+<p>工業區、農業區，首先是居民多半無意願，也對生活造成困擾，其次由於地處偏僻對雙方而言無法保障人身安全， 尤其夜間燈光極度昏暗，容易產稱治安問題。</p>
+</section>
+<section id="參考文獻" class="level3">
+<h3 class="anchored" data-anchor-id="參考文獻">參考文獻</h3>
+<ul>
+<li><ol type="1">
+<li><a href="https://www.jenjacobs.com/">珍雅各理論</a></li>
+</ol></li>
+<li><ol start="2" type="1">
+<li><a href="https://www.books.com.tw/products/0010883530?srsltid=AfmBOoqeGkS03PQ8QHL9cE0DbRDQLSBy0Beu6IC0FuvwhIxWqX0IOnzO">樓鳳，性淘金產業大揭密：警察帶路，立馬看懂江湖規矩，菜雞一夜成為老司機，乖乖女聽懂所有men’s talk</a></li>
+</ol></li>
+<li><ol start="3" type="1">
+<li><a href="https://www.books.com.tw/products/0010980610?srsltid=AfmBOopdZPDPX5jn5Hzo8Vv5Yd8A-iN2KrSuK2os4rJ_3N_qQUuNAM-S">我在荷蘭當都更說客：阿姆斯特丹以人為本的10年街區再生筆記</a></li>
+</ol></li>
+<li><ol start="4" type="1">
+<li><a href="https://www.books.com.tw/products/0010895473?srsltid=AfmBOoomqT6N7YNNpKQSkCkJa-MTKilDnJqIFqcK8_42JwBUHwhE3eBD">手槍女王 HAND JOB QUEEN：一個從業職人的真情告白</a></li>
+</ol></li>
+<li><ol start="5" type="1">
+<li><a href="https://www.tandfonline.com/doi/full/10.1080/01639625.2022.2110542#abstract">A Network Approach to Examine Neighborhood Interdependence Through the Target Selection of Repeat Buyers of Commercial Sex in the United States</a></li>
+</ol></li>
+<li><ol start="6" type="1">
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/32982037/">Where and why do illicit businesses cluster? Comparing sexually oriented massage parlors in Los Angeles County and New York City</a></li>
+</ol></li>
+<li><ol start="7" type="1">
+<li><a href="https://www.tandfonline.com/doi/full/10.1080/23322705.2021.1982238#abstract">Why are You Here? Modeling Illicit Massage Business Location Characteristics with Machine Learning</a></li>
+</ol></li>
+<li><ol start="8" type="1">
+<li><a href="https://www.tandfonline.com/doi/full/10.1080/21681376.2024.2334057?src=recsys#d1e137">What makes neighbourhood-level commercial centres attractive for neighbourhood residents?</a></li>
+</ol></li>
+<li><ol start="9" type="1">
+<li><a href="https://www.tandfonline.com/doi/full/10.1080/23754931.2018.1425633?src=recsys">The Red-Light Network: Exploring the Locational Strategies of Illicit Massage Businesses in Houston, Texas</a></li>
+</ol></li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

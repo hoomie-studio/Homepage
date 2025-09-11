@@ -5,6 +5,7 @@ format:
     css: styles.css
     orientation: rows
     scrolling: true
+    page-layout: full
 ---
 
 ## 獎項
@@ -25,12 +26,6 @@ format:
 
 中研院人社中心的「Cloud Computing and 3D Mapping with Geemap and Leafmap Workshop」工作坊 <br>第六屆國土空間圖資GIS競賽研習活動
 
-## 國際交流
-
-日本筑波移地教學規劃工作坊
-
-![](pic/移地教學.jpg){width="500"}
-
 ## 已修習之空間資訊課程
 
 ### 台大計算機網路中心 R語言視覺化
@@ -41,50 +36,54 @@ format:
 
 [台大計算機網路中心 R語言視覺化](https://www.csie.ntu.edu.tw/~r96002/courses/2023-2/)
 
-### 地理資訊系統
+### 地理資訊系統 (共6學分)
 
 ARCGIS、QGIS
 
-### 衛星遙測學
+### 衛星遙測學 (共3學分)
 
 GOOGLE EARTH ENGINE
 
 ## 已修習之統計應用課程
 
-### 統計學、大數據分析、計量地理
+### 統計學、大數據分析、計量地理 (共9學分)
 
 SPSS、EXCEL
+
+## 國際交流
+
+日本筑波移地教學規劃工作坊
+
+![](pic/移地教學.jpg){width="586"}
 
 ## 校內活動
 
 擔任城發系學會教學組講師，負責教學弟妹PS、AI、QGIS等軟體操作，並自製教材，協助學弟妹提升設計技能。
 
-![](pic/教學.jpg){width="557"}
-
-## 台北探索校內專題
-
-![](探索成果.jpg){width="586"}
-
-[應用GIS探討不同社會經濟族群的空間不平等 — 以公園用地為例](https://utsus.utaipei.edu.tw/p/404-1112-119743.php?Lang=zh-tw) </iframe>
-
-
-
-## 北市大創新創業競賽第二名
-
-建構納博聚思空間不動產資訊整合平台創業提案，本次提案結合了不動產、空間資訊， 透過串接後端API實現環域分析，透過open street map提供豐富之POI地理資訊，並結合前端網頁設計， 提供使用者友善的操作介面，讓使用者能夠輕鬆查詢鄰里相關資訊。<br><br> [![網站連結](八方雲圖團隊海報.png){width="586"}](https://neighborgis.hazelnut-paradise.com/)
-
-[網站連結](https://neighborgis.hazelnut-paradise.com/)
+![](pic/教學.jpg){width="586"}
 
 ## 台北生命故事暨健康科技園區
 
 （臺北市政府青年局113年度公共政策創意提案暨辯論競賽）入圍決賽
 
-{{< video https://www.youtube.com/watch?v=8cql6MCz5cg >}}
+![](pic/創業競賽.jpg){width="586"}
 
-<hr>
+<br> 
 
-## 萬華茶室老街再生計畫
+## 北市大創新創業競賽第二名
 
-2024年電腦輔助設計之寒假作業。由於茶室文化老街的興衰，有感於此特別保留西園路之巴洛克式街廓， 讓老街的傳統風華再現，參照實際街景製作而成 {{< video https://youtu.be/KS2CdOuROXI?si=cqepDMJwsjgON4-x >}}
+建構納博聚思空間不動產資訊整合平台創業提案，本次提案結合了不動產、空間資訊， 透過串接後端API實現環域分析，透過open street map提供豐富之POI地理資訊，並結合前端網頁設計， 提供使用者友善的操作介面，讓使用者能夠輕鬆查詢鄰里相關資訊。<br><br> 
+![](pic/決賽.jpg){width="586"}
+
+## 台北探索校內專題
+應用GIS探討不同社會經濟族群的空間不平等 — 以公園用地為例，本專題探討臺北市不同社會經濟族群在公園用地的空間分布情形， 透過GIS技術進行空間分析，並結合社會經濟資料，分析不同族群在公園用地的可及性與分布差異， 以期提供政策制定者參考，促進城市空間的公平與正義。
+<br><br> 
+![](探索成果.jpg){width="586"}
+
+
+
+
+
+
 
 

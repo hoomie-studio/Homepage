@@ -47,7 +47,7 @@ h4 {
 #Q: 如何定義內文的顏色?
 
 p { 
-    color: #e0e0e0; /* 內文顏色 */
+    color: #FFFFFF; /* 內文顏色 */
     font-weight: normal; /* 內文字體不加粗 */
 }
 
@@ -128,4 +128,43 @@ a.reference-link {
 }
 .navbar-brand:hover, .navbar a:hover {
   color: #A68B5B !important; /* 設定 Navbar 上的品牌文字與連結懸停顏色為淺藍色 */
+}
+
+/* 設定每個專案區塊的樣式 */
+.talk-item {
+  background-color: #292e3b;
+  border-left: 5px solid var(--quarto-link-color); /* 左側的垂直色塊 */
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 懸停時的效果 */
+.talk-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* 確保圖片填滿容器且比例不變 */
+.talk-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* 設定整個頁面內容區塊的文字顏色 */
+.quarto-page-content {
+  color: #ffffff !important; /* 強制文字為白色 */
+}
+
+/* 如果您的內文是獨立的段落 <p> */
+p {
+  color: #ffffff !important; /* 強制段落文字為白色 */
+}
+
+/* 設定頁面主標題的樣式，使其不加粗 */
+.quarto-title-block h1 {
+  font-weight: normal; /* 或 font-weight: 400; */
 }

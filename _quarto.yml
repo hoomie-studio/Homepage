@@ -13,8 +13,8 @@ website:
         text: Home 主頁
       - exp.qmd
       - project.qmd
-      - about.qmd
-      - maps.qmd
+      - text: "maps"
+        href: maps.qmd
     right:
       - icon: github # 使用 GitHub 圖標
         href: https://github.com/hoomie-studio
