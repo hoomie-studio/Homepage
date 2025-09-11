@@ -2,7 +2,7 @@
 title: "About me "
 format: 
   html:
-    css: styles.css
+    light: [sketchy, styles.css]
     orientation: rows
     scrolling: true
 ---

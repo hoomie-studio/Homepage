@@ -20,17 +20,17 @@ website:
         href: https://github.com/hoomie-studio
       - icon: envelope # 使用信封圖標
         href: mailto:您的電子郵件
-    theme:
-      light: simplex
-      dark: darkly
+
 format:
-  html:
-    theme: sketchy #主題
-    css: styles.css #自訂css
-    toc: true #目錄
-    monofont: courier new #等寬字型
-    editor: visual #視覺化編輯器，可改成 source
-    max-width: 1500px # 這裡可以設定一個非常大的寬度，例如 1500px，
+    html:
+      theme:
+        light: sketchy
+      css: styles.css
+      toc: true
+      monofont: courier new
+      editor: visual
+      max-width: 1500px
+
                        # 或者直接刪除這一行
 
       # - about.qmd
