@@ -23,7 +23,6 @@ format:
   html:
     theme:
       light: sketchy
-      dark: slate
     css: styles.css
     toc: true
     monofont: courier new

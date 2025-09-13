@@ -1,139 +1,134 @@
+/* 載入字體 */
+@font-face {
+  font-family: 'NotoSerifTC-VF';
+  src: url('./font/NotoSerifTC-VF.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'msjhl';
+  src: url('./font/msjhl.ttf') format('truetype');
+}
 
-/*______________________________________________________________________*/
+/* 全域設定 */
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  font-weight: bold;
+}
+
 h1,h2,h3,h4{
-    font-family: "SentyVanilla", sans-serif !important; /* 設定NSimSun字體 */
-} 
+  font-family: "NotoSerifTC-VF", sans-serif !important;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #FCEDEA;
+  margin-bottom: 1.5rem; /* 新增此行以增加標題與內文的間隙 */
+}
+
+p {
+  color: #FFFFFF !important;
+  font-weight: normal; /* 確保內文不加粗 */
+  font-family: "msjhl", sans-serif !important;
+  text-indent: 2em; /* 段落縮排 */
+  line-height: 1.8;
+}
 
 /* 移除卡片或面板的背景色，使其透明 */
 .card {
-    background-color: transparent !important; /* !important 用於強制覆蓋預設樣式 */
-    border: none !important; /* 移除邊框，如果有的話 */
-    color: #e0e0e0;
+  background-color: transparent !important;
+  border: none !important;
+  color: #e0e0e0;
 }
 
 .even {
-    height: 300px !important; /* 根據需要調整高度 */
-    overflow-y: auto; /* 內容過多時啟用滾動條 */
-    box-sizing: border-box;    width: 20% !important;
-
-}
-body {
-    background-color: #121212; /* 深色背景 */
-    color: #e0e0e0;
-    font-weight: normal; /* 內文字體不加粗 */
-    font-family: "SentyVanilla", sans-serif !important; /* 設定NSimSun字體 */
+  height: 300px !important;
+  overflow-y: auto;
+  box-sizing: border-box;
+  width: 20% !important;
 }
 
-/*______________________________________________________________________*/
-
-h1 {
-    color:#FCEDEA; /* 標題顏色 */
+code {
+  font-family: "NotoSerifTC-VF", sans-serif !important; /* 設定字體 */
+  background-color: transparent !important; /* 深色背景 */
+  color: #fff3bf!important; /* 設定顏色 */
+  font-weight: bold !important; /* 內文字體不加粗 */
+  font-size: 0.8rem !important; /* 調整字體大小 */
 }
-
-h2 {
-    color: #FCEDEA; /* 標題顏色 */
-    font-weight: normal; /* 內文字體不加粗 */
-
-}
-
-h3 {
-    color: #ffcdff; /* 標題顏色 */
-    font-weight: normal; /* 內文字體不加粗 */
-}
-
-h4 {
-    color: #FCEDEA; /* 標題顏色 */
-}
-#Q: 如何定義內文的顏色?
-
-p { 
-    color: #FFFFFF; /* 內文顏色 */
-    font-weight: normal; /* 內文字體不加粗 */
-}
-
-code  {
-  font-family: 'Courier New', Courier, monospace; /* 設置字體 */
-  background-color: #F8B9C4; /* 深色背景 */
-  color: #000000; /* 設置顏色 */
-  font-weight: normal; /* 內文字體不加粗 */
-} 
 
 .highlight-pink {
-  background-color: #F8B9C4; /* 深色背景 */
-  color: #000000; /* 設置顏色 */
-  padding: 2px 4px; /* 增加一些內邊距，讓背景更好看 */
-  border-radius: 3px; /* 輕微圓角 */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* 添加陰影 */
-  font-weight: normal; /* 內文字體不加粗 */
-  text-align: center; /* 文字置中 */
+  background-color: #F8B9C4;
+  font-family: "NotoSerifTC-VF", sans-serif !important; /* 設定字體 */
+  color: #000000;
+  font-size: 1rem !important; /* 調整字體大小 */
+  padding: 2px 4px;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  text-align: center;
+  text-indent: 2em; /* 新增此行，確保高亮段落也能縮排 */
 }
 
-
-
 .highlight-conclusion {
-  background-color: #F8B9C4; /* 深色背景 */
-  color: #000000; /* 設置顏色 */
-  padding: 2px 4px; /* 增加一些內邊距，讓背景更好看 */
-  border-radius: 3px; /* 輕微圓角 */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* 添加陰影 */
-  font-weight: normal; /* 內文字體不加粗 */
-  text-align: center; /* 文字置中 */
-  font-size: 2em; /* 調整字體大小 */
+  background-color: #F8B9C4;
+  color: #000000;
+  padding: 2px 4px;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  font-weight: normal;
+  text-align: center;
+  font-size: 2em;
 }
 
 .highlight-best {
-  background-color: #ffffa1; /* 深色背景 */
-  color: #000000; /* 設置顏色 */
-  padding: 2px 4px; /* 增加一些內邊距，讓背景更好看 */
-  border-radius: 3px; /* 輕微圓角 */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* 添加陰影 */
-  font-weight: normal; /* 內文字體不加粗 */
-  text-align: center; /* 文字置中 */
+  background-color: #ffffa1;
+  color: #000000;
+  padding: 2px 4px;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  font-weight: normal;
+  text-align: center;
 }
-
 
 .highlight-worst {
-  background-color: #e0e0e0; /* 深色背景 */
-  color: #000000; /* 設置顏色 */
-  padding: 2px 4px; /* 增加一些內邊距，讓背景更好看 */
-  border-radius: 3px; /* 輕微圓角 */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* 添加陰影 */
-  font-weight: normal; /* 內文字體不加粗 */
-  text-align: center; /* 文字置中 */
+  background-color: #e0e0e0;
+  color: #000000;
+  padding: 2px 4px;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  font-weight: normal;
+  text-align: center;
 }
-  
+
 a {
-    color:white; /* 連結文字顏色 */
-    text-decoration: none; /* 移除下劃線 */
+  color: white;
+  text-decoration: none;
 }
 a:hover {
-    color: #F8B9C4; /* 滑鼠懸停時的連結文字顏色 */
-    text-decoration: underline; /* 滑鼠懸停時添加下劃線 */
+  color: #F8B9C4;
+  text-decoration: underline;
 }
-#q: 我要怎麼修改參考文獻連結的文字顏色?
 
 a.reference-link {
-    color: ; /* 參考文獻連結文字顏色 */
-    text-decoration: none; /* 移除下劃線 */
+  color: #e0e0e0;
+  text-decoration: none;
+  font-family: msjhl;
 }
 
 .navbar {
-  background-color: #0F0F0F; /* 設定 Navbar 的背景顏色，這裡是深藍色 */
-  border-bottom: 2px solid #0F0F0F; /* 設定 Navbar 底部邊框顏色 */
-  opacity: 0.8; /* 設定透明度 */
+  background-color: #0F0F0F;
+  border-bottom: 2px solid #0F0F0F;
+  opacity: 0.8;
 }
 
 .navbar-brand, .navbar a {
-  color: #F2BAC9 !important; /* 設定 Navbar 上的品牌文字與連結顏色為白色 */
+  color: #F2BAC9 !important;
 }
 .navbar-brand:hover, .navbar a:hover {
-  color: #A68B5B !important; /* 設定 Navbar 上的品牌文字與連結懸停顏色為淺藍色 */
+  color: #A68B5B !important;
 }
 
 /* 設定每個專案區塊的樣式 */
 .talk-item {
   background-color: #292e3b;
-  border-left: 5px solid var(--quarto-link-color); /* 左側的垂直色塊 */
+  border-left: 5px solid var(--quarto-link-color);
   padding: 20px;
   margin-bottom: 25px;
   border-radius: 8px;
@@ -156,15 +151,10 @@ a.reference-link {
 
 /* 設定整個頁面內容區塊的文字顏色 */
 .quarto-page-content {
-  color: #ffffff !important; /* 強制文字為白色 */
+  color: #ffffff !important;
 }
 
-/* 如果您的內文是獨立的段落 <p> */
-p {
-  color: #ffffff !important; /* 強制段落文字為白色 */
-}
-
-/* 設定頁面主標題的樣式，使其不加粗 */
+/* 設定頁面主標題的樣式 */
 .quarto-title-block h1 {
-  font-weight: normal; /* 或 font-weight: 400; */
+  font-weight: bold;
 }

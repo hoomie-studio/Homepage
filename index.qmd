@@ -45,7 +45,7 @@ format:
 
 ### GIS 軟體
 
-熟悉軟體： ARCGIS、QGIS <br> 核心能力： 空間分析、地圖製作、數據處理
+熟悉軟體：`ARCGIS`、`QGIS` <br> 核心能力： 空間分析、地圖製作、數據處理
 :::
 
 ::: {.column width="50%"}
@@ -54,7 +54,7 @@ format:
 
 ### 資料視覺化
 
-熟悉語言： R <br> 核心套件： ggplot2、plotly、leafmap
+熟悉語言： `R` <br> 核心套件： ggplot2、plotly、leafmap
 :::
 :::::
 
@@ -62,13 +62,13 @@ format:
 ::: {.column width="50%"}
 ### 視覺影像處理
 
-熟悉語言： Python <br> 核心套件： OpenCV、YOLOv8
+熟悉語言： `Python` <br> 核心套件： OpenCV、YOLOv8
 :::
 
 ::: {.column width="50%"}
 ### 前端網頁設計
 
-熟悉技術： HTML、CSS、JavaScript <br> 核心能力： 響應式網站設計與開發
+熟悉技術： `HTML`、`CSS`、`JavaScript` <br> 核心能力： 響應式網站設計與開發
 :::
 :::::
 

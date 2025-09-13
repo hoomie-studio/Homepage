@@ -1,33 +1,72 @@
 /* 針對包含中文的標題設定微軟正黑體 */
 body {
-  background-color: #F5EFE7;
-  color: #C7B299; /* 設定內文顏色為黑色 */
-  font-weight: normal; /* 內文字體不加粗 */
+  background-color:#F2EFE9;
+  color: #c8b39e; /* 設定內文顏色為黑色 */
+  font-family: "NotoSerifTC-VF", sans-serif !important; /* 將dutcheb字體放在最前面 */
+  font-weight: bold; /* 內文字體不加粗 */
+  line-height: 1.8;
+  
 }
 
 p {
   color: #1d1c1c; /* 設定內文顏色為黑色 */
   font-weight: normal; /* 內文字體不加粗 */
+  font-family: "msjhl","dutch" , sans-serif !important;
+  line-height: 1.8;
 }
 
-h1,h2 {
+/* 修正後的 H1 和 H2 標題樣式 */
+h1 {
   color: #1F3A5F; /* 將標題顏色設為藍色 */
-  font-family: "SentyVanilla"!important;
-  src: url('./font/SentyVanilla.ttf') format('truetype');
+  font-family: "dutchbi", "NotoSerifTC-VF", sans-serif !important; /* 將dutcheb字體放在最前面 */
+  font-weight: bold; /* 設定為粗體 */
+  font-size: 1.6rem; /* 使用正確的屬性名稱，並根據需要調整大小 */
 }
 
-h3, h4 {
-  color: #5c5c5c; /* 將次標題顏色設為綠色 */
-  font-family: "SentyVanilla"!important;
-  src: url('./font/SentyVanilla.ttf') format('truetype');
+/* 修正後的 H3 和 H4 標題樣式 */
+ h2  {
+  color: #1F3A5F; /* 將次標題顏色設為綠色 */
+  font-family: "dutchbi", "NotoSerifTC-VF", sans-serif !important; /* 將dutcheb字體放在最前面 */
+  font-weight: bold; /* 設定為正常粗細 */
+  font-size: 1.4rem; /* 使用正確的屬性名稱，並根據需要調整大小 */
 }
 
+  h3, h4 {
+  color: #1F3A5F; /* 將次標題顏色設為綠色 */
+  font-family: "dutchbi", "NotoSerifTC-VF", sans-serif !important; /* 將dutcheb字體放在最前面 */
+  font-weight: bold; /* 設定為正常粗細 */
+  font-size: 1.2rem; /* 使用正確的屬性名稱，並根據需要調整大小 */
+}
+/* 載入字體的正確方式 */
+@font-face {
+  font-family: 'ChenYuluoyan-Thin';
+  src: url('./font/ChenYuluoyan-Thin.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'dutch';
+  src: url('./font/dutch.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'dutchbi';
+  src: url('./font/dutchbi.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'NotoSerifTC-VF';
+  src: url('./font/NotoSerifTC-VF.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'OLDENGL';
+  src: url('./font/OLDENGL.ttf') format('truetype');
+}
 .navbar {
-  background-color: #ede4d3; /* 設定 Navbar 的背景顏色，這裡是深藍色 */
+  background-color: #bfbdb7; /* 設定 Navbar 的背景顏色，這裡是深藍色 */
 }
 
 .navbar-brand, .navbar a {
   color: #232121 !important; /* 設定 Navbar 上的品牌文字與連結顏色為白色 */
+  font-family: "dutchbi", sans-serif !important; /* 將dutcheb字體放在最前面 */
+  font-size: 1rem; /* 使用正確的屬性名稱，並根據需要調整大小 */
 }
 .navbar-brand:hover, .navbar a:hover {
   color: #A68B5B !important; /* 設定 Navbar 上的品牌文字與連結懸停顏色為淺藍色 */
@@ -119,18 +158,117 @@ h3, h4 {
   overflow: hidden;
 }
 
-/* 載入自訂字體 */
-@font-face {
-  font-family: "SentyVanilla";
-  src: url("./font/SentyVanilla.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
 
 /* 修改 listing title 樣式 */
 .listing-title {
   color: #1F3A5F !important;      /* 藍色 */
-  font-family: "SentyVanilla", sans-serif !important; /* 自訂字體 */
-  font-size: 1.5rem;              /* 可調整大小 */
-  font-weight: normal;            /* 避免太粗 */
+  font-family: "NotoSerifTC-VF", sans-serif !important; /* 自訂字體 */
+  font-size: 1.2rem;              /* 可調整大小 */
+  font-weight: bold;            /* 避免太粗 */
+  margin-bottom: 1.5rem; /* 新增此行以增加標題與內文的間隙 */
+}
+
+code {
+  font-family: "dutchbi", sans-serif !important; /* 設定字體 */
+  background-color: #c4c4c4 !important; /* 深色背景 */
+  color: #FFFFFF !important; /* 設定顏色 */
+  font-weight: bold !important; /* 內文字體不加粗 */
+  font-size: 1.1rem !important; /* 調整字體大小 */
+  text-shadow: 1px 1px 2px #000000; /* 設定陰影 */
+}
+
+/* 新增的分類標籤樣式 */
+.listing-category {
+  display: inline-block;
+  background-color: #f7f3ed; /* 淺灰色背景 */
+  color: #000000!important; /* 深灰色文字 */
+  font-family: "NotoSerifTC-VF", sans-serif !important; /* 自訂字體 */
+  padding: 4px 10px;
+  margin-right: 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: normal;
+  margin-bottom: 1.5rem; /* 新增此行以增加標題與內文的間隙 */
+}
+/* 新增：針對 listing 排序連結（Order）的樣式 */
+body .quarto-listing-header .listing-sort a {
+  color: #1F3A5F !important;
+  font-family: "dutchbi", "NotoSerifTC-VF", sans-serif !important;
+  font-size: 1.2rem !important;
+  font-weight: bold !important;
+  text-decoration: none !important;
+  margin-left: 20px !important;
+  transition: all 0.3s ease !important;
+}
+
+body .quarto-listing-header .listing-sort a.active {
+  color: #333333 !important;
+  font-weight: bolder !important;
+}
+
+body .quarto-listing-header .listing-sort a:hover {
+  color: #A68B5B !important;
+}
+
+/* 新增：調整 listing-grid 樣式以符合 fluid syndicate 的排版 */
+.listing-grid {
+  /* 使用 CSS Grid 排版 */
+  display: grid !important;
+  /* 設定欄與欄之間的間距為 0 */
+  gap: 0 !important;
+  /* 根據視窗寬度自動調整欄位數量，確保每個卡片最小寬度為 300px */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+}
+
+/* 調整 listing-card 的樣式 */
+.listing-card {
+  /* 移除卡片內邊距 */
+  padding: 0 !important;
+  /* 將卡片內容設為 flexbox 容器，並以垂直方向排列 */
+  display: flex;
+  flex-direction: column;
+}
+
+/* 調整圖片容器的樣式 */
+.listing-image {
+  /* 讓圖片容器填滿可用空間 */
+  flex-grow: 1 !important;
+  width: 100% !important;
+  height: 100% !important;
+  /* 移除圖片容器內邊距 */
+  padding: 0 !important;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 確保圖片本身填滿其父容器並裁切 */
+.listing-image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  /* 移除圓角和陰影 */
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transition: transform 0.3s ease;
+}
+
+/* 設定滑鼠懸停時圖片的放大效果 */
+.listing-card:hover .listing-image img {
+  transform: scale(1.05);
+}
+
+/* 調整 listing 內容區塊的樣式 */
+.listing-content {
+  /* 設定一個最小高度，讓所有卡片看起來高度一致 */
+  min-height: 5rem;
+  /* 移除內邊距 */
+  padding: 0 !important;
+  /* 使用 flexbox 在內容區塊內垂直和水平居中對齊 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
 }

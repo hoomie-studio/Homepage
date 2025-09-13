@@ -2,7 +2,7 @@
 title: "Experience 經歷"
 format: 
   html:
-    css: styles.css
+    #css: styles.css
     orientation: rows
     scrolling: true
     page-layout: full
@@ -38,17 +38,17 @@ format:
 
 ### 地理資訊系統 (共6學分)
 
-ARCGIS、QGIS
+`ARCGIS`、`QGIS`
 
 ### 衛星遙測學 (共3學分)
 
-GOOGLE EARTH ENGINE
+`GOOGLE EARTH ENGINE`
 
 ## 已修習之統計應用課程
 
 ### 統計學、大數據分析、計量地理 (共9學分)
 
-SPSS、EXCEL
+`SPSS`、`EXCEL`
 
 ## 國際交流
 
@@ -75,3 +75,5 @@ SPSS、EXCEL
 ## 台北探索校內專題
 
 應用GIS探討不同社會經濟族群的空間不平等 — 以公園用地為例，本專題探討臺北市不同社會經濟族群在公園用地的空間分布情形， 透過GIS技術進行空間分析，並結合社會經濟資料，分析不同族群在公園用地的可及性與分布差異， 以期提供政策制定者參考，促進城市空間的公平與正義。 <br><br> ![](探索成果.jpg){width="586"}
+
+

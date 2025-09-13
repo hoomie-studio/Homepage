@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Listing Example – Hoomie studio</title>
+<title>Blog 部落格 – Hoomie studio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -38,14 +38,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-b719d3d4935f2b08311a76135e2bf442.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-c8b544e1eab81f7563542c0a8b71d1e9.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-b719d3d4935f2b08311a76135e2bf442.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-b719d3d4935f2b08311a76135e2bf442.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-580547b1a77254d7f4adc12fac90fa48.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-ece5d7d993e60fbd605749ce67b69350.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-580547b1a77254d7f4adc12fac90fa48.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-580547b1a77254d7f4adc12fac90fa48.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -83,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
+      valueNames: ['listing-title','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
       page: 6,
     pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
       searchColumns: ["listing-title","listing-date"],
@@ -137,167 +133,7 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    window.setColorSchemeToggle = (alternate) => {
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
-        }
-      }
-    };
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        // note: dark is layered on light, we don't disable primary!
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      window.setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        window.scrollTo(0, 1);
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    window.hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(darkModeDefault) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    };
-    const darkModeDefault = false;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !window.hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-    };
-    // Switch to dark mode if need be
-    if (window.hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -328,7 +164,7 @@ window.Quarto = {
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./展覽館.html" aria-current="page"> 
-<span class="menu-text">Listing</span></a>
+<span class="menu-text">Blog 部落格</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./maps.html"> 
@@ -349,7 +185,6 @@ window.Quarto = {
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -360,14 +195,13 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(13)</span></div><div class="category" data-category="YXJjaGl2ZWQ=">archived <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dGVjaG5vbG9neQ==">technology <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(10)</span></div><div class="category" data-category="JUU0JUI4JTgwJUU0JUI4JThB">一上 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="JUU0JUI4JTgwJUU0JUI4JThC">一下 <span class="quarto-category-count">(2)</span></div><div class="category" data-category="JUU0JUJBJThDJUU0JUI4JThB">二上 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="JUU0JUJBJThDJUU0JUI4JThC">二下 <span class="quarto-category-count">(2)</span></div><div class="category" data-category="JUU0JUI4JTg5JUU0JUI4JThB">三上 <span class="quarto-category-count">(2)</span></div><div class="category" data-category="JUU0JUI4JTg5JUU0JUI4JThC">三下 <span class="quarto-category-count">(2)</span></div><div class="category" data-category="JUU1JTlEJUExJUU1JUJBJUE2JUU1JTg4JTg2JUU2JTlFJTkw">坡度分析 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="JUU3JUE5JUJBJUU5JTk2JTkzJUU4JTg3JUFBJUU3JTlCJUI4JUU5JTk3JTlD">空間自相關 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="JUU4JUJGJUI0JUU2JUFEJUI4JUU1JTg4JTg2JUU2JTlFJTkw">迴歸分析 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="JUU4JUE4JUFEJUU4JUE4JTg4JUU4JUFBJUIy">設計課 <span class="quarto-category-count">(6)</span></div><div class="category" data-category="R1dS">GWR <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UUdJUw==">QGIS <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UiVFOCVBQSU5RSVFOCVBOCU4MA==">R語言 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UlM=">RS <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dXJiYW4lMjBwbGFubmluZw==">urban planning <span class="quarto-category-count">(6)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Listing Example</h1>
+<h1 class="title">Blog 部落格</h1>
 </div>
 
 
@@ -385,7 +219,6 @@ window.Quarto = {
 
 
 <p>You can review the following documents for additional information: 以下是我歷年來的作品，包含資料視覺化、專題報告、競賽提案、空間規劃設計等，歡迎參考！</p>
-<p>Learn more about Quarto <a href="https://www.quarto.com">here</a>.</p>
 
 
 
@@ -414,11 +247,236 @@ window.Quarto = {
     </div>
 </div>
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="YXJjaGl2ZWQlMkN0ZWNobm9sb2d5" data-listing-date-sort="1673712000000">
+<div class="g-col-1" data-index="0" data-categories="JUU0JUI4JTgwJUU0JUI4JThCJTJDUUdJUyUyQyVFNSU5RCVBMSVFNSVCQSVBNiVFNSU4OCU4NiVFNiU5RSU5MA==">
+<a href="" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="pic/檳榔研究.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+檳榔與災害
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('JUU0JUI4JTgwJUU0JUI4JThC'); return false;">一下</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UUdJUw=='); return false;">QGIS</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('JUU1JTlEJUExJUU1JUJBJUE2JUU1JTg4JTg2JUU2JTlFJTkw'); return false;">坡度分析</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p><br>本研究目的是藉由針對檳榔所謂於山坡地上的危險因子(如陡坡、土壤層脆弱、 近斷層處等)進行轉種的評估,根據所佔的不同面積,以期了解檳榔轉種的優先順序。</p>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="JUU0JUJBJThDJUU0JUI4JThCJTJDUlMlMkMlRTglQkYlQjQlRTYlQUQlQjglRTUlODglODYlRTYlOUUlOTA=">
+<a href="" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="pic/水庫研究.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+探究大氣、 水文暨土地利用因子與封閉水域優養化之相關性 ──以德基水庫為例
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('JUU0JUJBJThDJUU0JUI4JThC'); return false;">二下</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UlM='); return false;">RS</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('JUU4JUJGJUI0JUU2JUFEJUI4JUU1JTg4JTg2JUU2JTlFJTkw'); return false;">迴歸分析</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p><br>本研究在探討中小尺度封閉水域(如湖泊、人工水庫等,本研究選取德基水庫 分析)之優養化程度與其臨近區域之長期大氣因子、土地利用種類及配置的相關 性。</p>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="JUU0JUI4JTg5JUU0JUI4JThBJTJDJUU3JUE5JUJBJUU5JTk2JTkzJUU4JTg3JUFBJUU3JTlCJUI4JUU5JTk3JTlDJTJDR1dS">
+<a href="" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="pic/台北探索.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+應用 GIS 探討不同社會經濟族群的空間不平等–以公園用地為例
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('JUU0JUI4JTg5JUU0JUI4JThB'); return false;">三上</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('JUU3JUE5JUJBJUU5JTk2JTkzJUU4JTg3JUFBJUU3JTlCJUI4JUU5JTk3JTlD'); return false;">空間自相關</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('R1dS'); return false;">GWR</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p><br>研究採用 OLS 最小平方法和地理加權迴歸(GWR)兩種方法,以社會脆弱度作為 主要自變數,公園綠地面積作為應變數。透過分析,可辨識出哪些社會經濟特徵的族 群最易受到公園綠地分配不均的影響,並揭示不同地區的空間異質性。研究結果有助</p>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="3" data-categories="JUU0JUI4JTgwJUU0JUI4JThBJTJDJUU4JUE4JUFEJUU4JUE4JTg4JUU4JUFBJUIyJTJDdXJiYW4lMjBwbGFubmluZw==">
 <a href="http://rpubs.com/min_jhfdo/1301288" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="pic/公有土地地圖.png" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="pic/一上.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+設計海報
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('JUU0JUI4JTgwJUU0JUI4JThB'); return false;">一上</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('JUU4JUE4JUFEJUU4JUE4JTg4JUU4JUFBJUIy'); return false;">設計課</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('dXJiYW4lMjBwbGFubmluZw=='); return false;">urban planning</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p><br>使用 R 語言進行撰寫迴圈讀取公有土地資料KML進行視覺化練習。</p>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="4" data-categories="JUU0JUI4JTgwJUU0JUI4JThCJTJDJUU4JUE4JUFEJUU4JUE4JTg4JUU4JUFBJUIyJTJDdXJiYW4lMjBwbGFubmluZw==">
+<a href="http://rpubs.com/min_jhfdo/1301288" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="pic/一下.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+設計海報
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('JUU0JUI4JTgwJUU0JUI4JThC'); return false;">一下</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('JUU4JUE4JUFEJUU4JUE4JTg4JUU4JUFBJUIy'); return false;">設計課</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('dXJiYW4lMjBwbGFubmluZw=='); return false;">urban planning</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p><br>使用 R 語言進行撰寫迴圈讀取公有土地資料KML進行視覺化練習。</p>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="5" data-categories="JUU0JUJBJThDJUU0JUI4JThBJTJDJUU4JUE4JUFEJUU4JUE4JTg4JUU4JUFBJUIyJTJDdXJiYW4lMjBwbGFubmluZw==">
+<a href="http://rpubs.com/min_jhfdo/1301288" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="pic/二上.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+設計海報
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('JUU0JUJBJThDJUU0JUI4JThB'); return false;">二上</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('JUU4JUE4JUFEJUU4JUE4JTg4JUU4JUFBJUIy'); return false;">設計課</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('dXJiYW4lMjBwbGFubmluZw=='); return false;">urban planning</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p><br>使用 R 語言進行撰寫迴圈讀取公有土地資料KML進行視覺化練習。</p>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="6" data-categories="JUU0JUJBJThDJUU0JUI4JThCJTJDJUU4JUE4JUFEJUU4JUE4JTg4JUU4JUFBJUIyJTJDdXJiYW4lMjBwbGFubmluZw==">
+<a href="http://rpubs.com/min_jhfdo/1301288" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" data-src="pic/二下.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+設計海報
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('JUU0JUJBJThDJUU0JUI4JThC'); return false;">二下</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('JUU4JUE4JUFEJUU4JUE4JTg4JUU4JUFBJUIy'); return false;">設計課</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('dXJiYW4lMjBwbGFubmluZw=='); return false;">urban planning</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p><br>使用 R 語言進行撰寫迴圈讀取公有土地資料KML進行視覺化練習。</p>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="7" data-categories="JUU0JUI4JTg5JUU0JUI4JThBJTJDJUU4JUE4JUFEJUU4JUE4JTg4JUU4JUFBJUIyJTJDdXJiYW4lMjBwbGFubmluZw==">
+<a href="http://rpubs.com/min_jhfdo/1301288" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" data-src="pic/三上.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+設計海報
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('JUU0JUI4JTg5JUU0JUI4JThB'); return false;">三上</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('JUU4JUE4JUFEJUU4JUE4JTg4JUU4JUFBJUIy'); return false;">設計課</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('dXJiYW4lMjBwbGFubmluZw=='); return false;">urban planning</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p><br>使用 R 語言進行撰寫迴圈讀取公有土地資料KML進行視覺化練習。</p>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="8" data-categories="JUU0JUI4JTg5JUU0JUI4JThCJTJDJUU4JUE4JUFEJUU4JUE4JTg4JUU4JUFBJUIyJTJDdXJiYW4lMjBwbGFubmluZw==">
+<a href="http://rpubs.com/min_jhfdo/1301288" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" data-src="pic/三下.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+設計海報
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('JUU0JUI4JTg5JUU0JUI4JThC'); return false;">三下</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('JUU4JUE4JUFEJUU4JUE4JTg4JUU4JUFBJUIy'); return false;">設計課</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('dXJiYW4lMjBwbGFubmluZw=='); return false;">urban planning</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p><br>使用 R 語言進行撰寫迴圈讀取公有土地資料KML進行視覺化練習。</p>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="9" data-categories="JUU0JUI4JTg5JUU0JUI4JThCJTJDUiVFOCVBQSU5RSVFOCVBOCU4MA==" data-listing-date-sort="1743436800000">
+<a href="http://rpubs.com/min_jhfdo/1301288" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" data-src="pic/公有土地地圖.png" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -426,308 +484,17 @@ window.Quarto = {
 </h5>
 <div class="listing-categories">
 
-<div class="listing-category" onclick="window.quartoListingCategory('YXJjaGl2ZWQ='); return false;">archived</div>
+<div class="listing-category" onclick="window.quartoListingCategory('JUU0JUI4JTg5JUU0JUI4JThC'); return false;">三下</div>
 
-<div class="listing-category" onclick="window.quartoListingCategory('dGVjaG5vbG9neQ=='); return false;">technology</div>
+<div class="listing-category" onclick="window.quartoListingCategory('UiVFOCVBQSU5RSVFOCVBOCU4MA=='); return false;">R語言</div>
 
 </div>
 <div class="card-text listing-description delink">
-<p>使用 R 語言進行撰寫迴圈讀取公有土地資料KML進行視覺化練習。</p>
+<p><br>使用 R 語言進行撰寫迴圈讀取公有土地資料KML進行視覺化練習。</p>
 </div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-您的姓名
-</div>
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
-Jan 15, 2023
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="1" data-listing-date-sort="1673712000000">
-<a href="http://rpubs.com/min_jhfdo/1301288" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="pic/公有土地地圖.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-公有土地與資料視覺化
-</h5>
-<div class="card-text listing-description delink">
-<p>使用 R 語言進行撰寫迴圈讀取公有土地資料KML進行視覺化練習。</p>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-您的姓名
-</div>
-<div class="listing-date">
-Jan 15, 2023
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="2" data-listing-date-sort="1673712000000">
-<a href="http://rpubs.com/min_jhfdo/1301288" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="pic/公有土地地圖.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-公有土地與資料視覺化
-</h5>
-<div class="card-text listing-description delink">
-<p>使用 R 語言進行撰寫迴圈讀取公有土地資料KML進行視覺化練習。</p>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-您的姓名
-</div>
-<div class="listing-date">
-Jan 15, 2023
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="3" data-listing-date-sort="1673712000000">
-<a href="http://rpubs.com/min_jhfdo/1301288" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="pic/公有土地地圖.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-公有土地與資料視覺化
-</h5>
-<div class="card-text listing-description delink">
-<p>使用 R 語言進行撰寫迴圈讀取公有土地資料KML進行視覺化練習。</p>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-您的姓名
-</div>
-<div class="listing-date">
-Jan 15, 2023
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="4" data-listing-date-sort="1673712000000">
-<a href="http://rpubs.com/min_jhfdo/1301288" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="pic/公有土地地圖.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-公有土地與資料視覺化
-</h5>
-<div class="card-text listing-description delink">
-<p>使用 R 語言進行撰寫迴圈讀取公有土地資料KML進行視覺化練習。</p>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-您的姓名
-</div>
-<div class="listing-date">
-Jan 15, 2023
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="5" data-listing-date-sort="1673712000000">
-<a href="http://rpubs.com/min_jhfdo/1301288" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="pic/公有土地地圖.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-公有土地與資料視覺化
-</h5>
-<div class="card-text listing-description delink">
-<p>使用 R 語言進行撰寫迴圈讀取公有土地資料KML進行視覺化練習。</p>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-您的姓名
-</div>
-<div class="listing-date">
-Jan 15, 2023
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="6" data-listing-date-sort="1673712000000">
-<a href="http://rpubs.com/min_jhfdo/1301288" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" data-src="pic/公有土地地圖.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-公有土地與資料視覺化
-</h5>
-<div class="card-text listing-description delink">
-<p>使用 R 語言進行撰寫迴圈讀取公有土地資料KML進行視覺化練習。</p>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-您的姓名
-</div>
-<div class="listing-date">
-Jan 15, 2023
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="7" data-listing-date-sort="1673712000000">
-<a href="http://rpubs.com/min_jhfdo/1301288" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" data-src="pic/公有土地地圖.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-公有土地與資料視覺化
-</h5>
-<div class="card-text listing-description delink">
-<p>使用 R 語言進行撰寫迴圈讀取公有土地資料KML進行視覺化練習。</p>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-您的姓名
-</div>
-<div class="listing-date">
-Jan 15, 2023
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="8" data-listing-date-sort="1673712000000">
-<a href="http://rpubs.com/min_jhfdo/1301288" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" data-src="pic/公有土地地圖.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-公有土地與資料視覺化
-</h5>
-<div class="card-text listing-description delink">
-<p>使用 R 語言進行撰寫迴圈讀取公有土地資料KML進行視覺化練習。</p>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-您的姓名
-</div>
-<div class="listing-date">
-Jan 15, 2023
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="9" data-listing-date-sort="1673712000000">
-<a href="http://rpubs.com/min_jhfdo/1301288" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" data-src="pic/公有土地地圖.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-公有土地與資料視覺化
-</h5>
-<div class="card-text listing-description delink">
-<p>使用 R 語言進行撰寫迴圈讀取公有土地資料KML進行視覺化練習。</p>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-您的姓名
-</div>
-<div class="listing-date">
-Jan 15, 2023
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="10" data-listing-date-sort="1673712000000">
-<a href="http://rpubs.com/min_jhfdo/1301288" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" data-src="pic/公有土地地圖.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-公有土地與資料視覺化
-</h5>
-<div class="card-text listing-description delink">
-<p>使用 R 語言進行撰寫迴圈讀取公有土地資料KML進行視覺化練習。</p>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-您的姓名
-</div>
-<div class="listing-date">
-Jan 15, 2023
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="11" data-listing-date-sort="1673712000000">
-<a href="http://rpubs.com/min_jhfdo/1301288" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" data-src="pic/公有土地地圖.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-公有土地與資料視覺化
-</h5>
-<div class="card-text listing-description delink">
-<p>使用 R 語言進行撰寫迴圈讀取公有土地資料KML進行視覺化練習。</p>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-您的姓名
-</div>
-<div class="listing-date">
-Jan 15, 2023
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="12" data-listing-date-sort="1673712000000">
-<a href="http://rpubs.com/min_jhfdo/1301288" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" data-src="pic/公有土地地圖.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-公有土地與資料視覺化
-</h5>
-<div class="card-text listing-description delink">
-<p>使用 R 語言進行撰寫迴圈讀取公有土地資料KML進行視覺化練習。</p>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-您的姓名
-</div>
-<div class="listing-date">
-Jan 15, 2023
+Apr 1, 2025
 </div>
 </div>
 </div>
@@ -741,19 +508,6 @@ Jan 15, 2023
 </div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    // Ensure there is a toggle, if there isn't float one in the top right
-    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-      const i = window.document.createElement("i");
-      i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
-    }
-    window.setColorSchemeToggle(window.hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {

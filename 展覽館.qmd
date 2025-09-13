@@ -1,5 +1,5 @@
 ---
-title: "Listing"
+title: "Blog 部落格"
 listing:
   id: sample-listings
   sort: "date desc"
@@ -10,21 +10,8 @@ listing:
   categories: true
   contents: 
     - project1.yaml
-    - project2.yaml
-    - project3.yaml
-    - project4.yaml
-    - project5.yaml
-    - project6.yaml
-    - project7.yaml
-    - project8.yaml
-    - project9.yaml
-    - project10.yaml
-    - project11.yaml
-    - project12.yaml
-    - project13.yaml
 ---
 
 You can review the following documents for additional information:
 以下是我歷年來的作品，包含資料視覺化、專題報告、競賽提案、空間規劃設計等，歡迎參考！
 
-Learn more about Quarto [here](https://www.quarto.com).
