@@ -1,0 +1,80 @@
+<div class="exhibit-container">
+  <!-- 作品1 -->
+  <div id="作品1" class="exhibit-item active">
+    <div class="exhibit-content">
+      <div class="exhibit-image">
+        <a href="http://rpubs.com/min_jhfdo/1301288" target="_blank">
+          <img src="pic/公有土地地圖.png" alt="公有土地地圖">
+        </a>
+      </div>
+      <div class="exhibit-description">
+        <h2>公有土地與資料視覺化</h2>
+        <p><strong>內容說明：</strong> 使用 R 語言進行撰寫迴圈讀取公有土地資料 KML 進行視覺化練習。<br>
+        <strong>連結：</strong> <a href="http://rpubs.com/min_jhfdo/1301288" target="_blank">點此觀看</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 作品2 -->
+  <div id="作品2" class="exhibit-item">
+    <div class="exhibit-content">
+      <div class="exhibit-image">
+        <a href="http://rpubs.com/min_jhfdo/1301288" target="_blank">
+          <img src="pic/學校周遭POI地圖.png" alt="學校周遭POI地圖">
+        </a>
+      </div>
+      <div class="exhibit-description">
+        <h2>學校周遭 POI 分布地圖</h2>
+        <p><strong>內容說明：</strong> 使用 R 語言引用 OSM API 獲取特定地點周遭 POI 興趣點。<br>
+        <strong>連結：</strong> <a href="http://rpubs.com/min_jhfdo/1301288" target="_blank">點此觀看</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 作品3 -->
+  <div id="作品3" class="exhibit-item">
+    <div class="exhibit-content">
+      <div class="exhibit-image">
+        <a href="https://utsus.utaipei.edu.tw/p/404-1112-119743.php?Lang=zh-tw" target="_blank">
+          <img src="探索成果.jpg" alt="台北探索校內專題">
+        </a>
+      </div>
+      <div class="exhibit-description">
+        <h2>台北探索校內專題</h2>
+        <p><strong>專題名稱：</strong> 應用 GIS 探討不同社會經濟族群的空間不平等 — 以公園用地為例<br>
+        <strong>連結：</strong> <a href="https://utsus.utaipei.edu.tw/p/404-1112-119743.php?Lang=zh-tw" target="_blank">點此觀看</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="exhibit-nav">
+  <button id="prev-btn" class="nav-button">上一個作品</button>
+  <a href="/" class="nav-button">返回展覽</a>
+  <button id="next-btn" class="nav-button">下一個作品</button>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const exhibitItems = document.querySelectorAll('.exhibit-item');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  let currentIndex = 0;
+
+  function updateExhibit(newIndex) {
+    exhibitItems[currentIndex].classList.remove('active');
+    exhibitItems[newIndex].classList.add('active');
+    currentIndex = newIndex;
+  }
+
+  prevBtn.addEventListener('click', function() {
+    let newIndex = (currentIndex - 1 + exhibitItems.length) % exhibitItems.length;
+    updateExhibit(newIndex);
+  });
+
+  nextBtn.addEventListener('click', function() {
+    let newIndex = (currentIndex + 1) % exhibitItems.length;
+    updateExhibit(newIndex);
+  });
+});
+</script>

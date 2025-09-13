@@ -1,0 +1,102 @@
+/*
+  載入自訂字體
+*/
+@font-face {
+  font-family: "SentyVanilla";
+  src: url('./font/SentyVanilla.ttf') format('truetype');
+}
+
+/* 網站整體樣式 */
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  color: #1d1c1c;
+  background-color: #F7EEDD;
+}
+
+h1, h2, h3, h4 {
+  font-family: "SentyVanilla", sans-serif;
+}
+
+h1, h2 {
+  color: #1F3A5F;
+}
+
+h3, h4 {
+  color: #5c5c5c;
+}
+
+p {
+  color: #5c5c5c;
+  font-weight: normal;
+}
+
+.navbar {
+  background-color: #F7EEDD;
+}
+
+.navbar-brand, .navbar a {
+  color: #232121 !important;
+}
+
+.navbar-brand:hover, .navbar a:hover {
+  color: #A68B5B !important;
+}
+
+/* 主容器：左右兩欄排版 */
+.main-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 50px 20px;
+}
+
+.content-container {
+  max-width: 700px; /* 內容區塊最大寬度 */
+  flex-grow: 1;
+}
+
+/* 右側資訊欄 */
+.sidebar {
+  width: 250px;
+  min-width: 250px;
+  position: sticky;
+  top: 100px; /* 距離頂部的距離 */
+  align-self: flex-start;
+  background-color: #F0E8D7;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.sidebar-info {
+  margin-bottom: 20px;
+}
+
+.sidebar-info p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* 作品卡片樣式 */
+.talk-item {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.talk-title {
+  color: #1F3A5F;
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 1.8rem;
+}
+
+/* 連結樣式，確保滑鼠懸停有效果 */
+.talk-item a {
+  text-decoration: none;
+}
+
+.talk-item a:hover .talk-title {
+  color: #A68B5B;
+  text-decoration: underline;
+}

@@ -1,0 +1,10 @@
+- title: "公有土地與資料視覺化"
+  author: "您的姓名"
+  date: "2023-01-15"
+  image: "pic/公有土地地圖.png"
+  description: "使用 R 語言進行撰寫迴圈讀取公有土地資料KML進行視覺化練習。"
+  path: "http://rpubs.com/min_jhfdo/1301288"
+  categories: [archived, technology]
+
+
+#for ($i=2; $i -le 20; $i++) { Copy-Item project_link\project1.yaml -Destination "project_link\project$i.yaml" }

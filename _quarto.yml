@@ -2,8 +2,6 @@ project:
   type: website
   output-dir: docs
 
-
-      
 website:
   title: "Hoomie studio"
   navbar:
@@ -13,27 +11,21 @@ website:
         text: Home 主頁
       - exp.qmd
       - project.qmd
+      - 展覽館.qmd
       - text: "maps"
         href: maps.qmd
     right:
-      - icon: github # 使用 GitHub 圖標
+      - icon: github
         href: https://github.com/hoomie-studio
-      - icon: envelope # 使用信封圖標
+      - icon: envelope
         href: mailto:您的電子郵件
-
 format:
-    html:
-      theme:
-        light: sketchy
-      css: styles.css
-      toc: true
-      monofont: courier new
-      editor: visual
-      max-width: 1500px
-
-                       # 或者直接刪除這一行
-
-      # - about.qmd
-      # - maps.qmd
-      
-    
+  html:
+    theme:
+      light: sketchy
+      dark: slate
+    css: styles.css
+    toc: true
+    monofont: courier new
+    editor: visual
+    max-width: 1500px

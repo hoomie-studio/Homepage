@@ -1,11 +1,12 @@
 ---
-title: "Projects 作品"
+title: "Projects 專案"
 format: 
   html:
     css: styles.css
     orientation: rows
     scrolling: true
     page-layout: full
+    toc-location: right 
 ---
 
 以下是我歷年來的作品，包含資料視覺化、專題報告、競賽提案、空間規劃設計等，歡迎參考！

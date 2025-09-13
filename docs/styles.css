@@ -1,27 +1,25 @@
 /* 針對包含中文的標題設定微軟正黑體 */
 body {
-
   background-color: #F5EFE7;
   color: #C7B299; /* 設定內文顏色為黑色 */
   font-weight: normal; /* 內文字體不加粗 */
 }
 
 p {
-
   color: #1d1c1c; /* 設定內文顏色為黑色 */
   font-weight: normal; /* 內文字體不加粗 */
 }
 
-h1,h2  {
-    color: #1F3A5F; /* 將標題顏色設為藍色 */
-    font-family: "SentyVanilla"!important;
-    src: url('./font/SentyVanilla.ttf') format('truetype');
+h1,h2 {
+  color: #1F3A5F; /* 將標題顏色設為藍色 */
+  font-family: "SentyVanilla"!important;
+  src: url('./font/SentyVanilla.ttf') format('truetype');
 }
-  
+
 h3, h4 {
-    color: #5c5c5c; /* 將次標題顏色設為綠色 */
-    font-family: "SentyVanilla"!important;
-    src: url('./font/SentyVanilla.ttf') format('truetype');
+  color: #5c5c5c; /* 將次標題顏色設為綠色 */
+  font-family: "SentyVanilla"!important;
+  src: url('./font/SentyVanilla.ttf') format('truetype');
 }
 
 .navbar {
@@ -95,11 +93,44 @@ h3, h4 {
 
 #Q:我要把版面拉寬
 .even {
-    width: 80% !important; /* 設定寬度為20% */
-    height: 1000px !important; /* 根據需要調整高度 */
-    overflow-y: auto; /* 內容過多時啟用滾動條 */
-    box-sizing: border-box; /* 包括padding和border在內的寬度計算 */
+  width: 80% !important; /* 設定寬度為20% */
+  height: 1000px !important; /* 根據需要調整高度 */
+  overflow-y: auto; /* 內容過多時啟用滾動條 */
+  box-sizing: border-box; /* 包括padding和border在內的寬度計算 */
 }
 
+/* 移除 listing 卡片的邊框與陰影 */
+.card,
+.card-body,
+.card-img-top {
+  border: none !important;
+  box-shadow: none !important;
+}
 
+/* 如果還有殘留的外框 */
+.quarto-listing .card {
+  border: none !important;
+  box-shadow: none !important;
+}
 
+/* 圖片調整 */
+.card-img-top {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* 載入自訂字體 */
+@font-face {
+  font-family: "SentyVanilla";
+  src: url("./font/SentyVanilla.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 修改 listing title 樣式 */
+.listing-title {
+  color: #1F3A5F !important;      /* 藍色 */
+  font-family: "SentyVanilla", sans-serif !important; /* 自訂字體 */
+  font-size: 1.5rem;              /* 可調整大小 */
+  font-weight: normal;            /* 避免太粗 */
+}

@@ -1,0 +1,105 @@
+/* 針對包含中文的標題設定微軟正黑體 */
+body {
+
+  background-color: #F5EFE7;
+  color: #C7B299; /* 設定內文顏色為黑色 */
+  font-weight: normal; /* 內文字體不加粗 */
+}
+
+p {
+
+  color: #1d1c1c; /* 設定內文顏色為黑色 */
+  font-weight: normal; /* 內文字體不加粗 */
+}
+
+h1,h2  {
+    color: #1F3A5F; /* 將標題顏色設為藍色 */
+    font-family: "SentyVanilla"!important;
+    src: url('./font/SentyVanilla.ttf') format('truetype');
+}
+  
+h3, h4 {
+    color: #5c5c5c; /* 將次標題顏色設為綠色 */
+    font-family: "SentyVanilla"!important;
+    src: url('./font/SentyVanilla.ttf') format('truetype');
+}
+
+.navbar {
+  background-color: #ede4d3; /* 設定 Navbar 的背景顏色，這裡是深藍色 */
+}
+
+.navbar-brand, .navbar a {
+  color: #232121 !important; /* 設定 Navbar 上的品牌文字與連結顏色為白色 */
+}
+.navbar-brand:hover, .navbar a:hover {
+  color: #A68B5B !important; /* 設定 Navbar 上的品牌文字與連結懸停顏色為淺藍色 */
+}
+/* 設定 iframe 容器樣式 */
+.iframe-container {
+  position: relative; /* 讓子元素可以相對於此容器定位 */
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 的寬高比 (9 / 16 = 0.5625) */
+  height: 0; /* 高度設為 0 */
+  overflow: hidden; /* 確保簡報不會超出容器 */
+}
+
+/* 確保 iframe 填滿整個容器 */
+.iframe-container iframe {
+  position: absolute; /* 相對於容器定位 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.float-left {
+  float: left; /* 讓圖片浮動在左側 */
+  margin-right: 20px; /* 在圖片右側增加間距，避免文字緊貼圖片 */
+  margin-bottom: 0px; /* 在圖片下方增加間距 */
+  border-radius: 50%; /* 新增：讓圖片變成圓形 */
+  /* 確保圖片是正方形才能完美圓形，或至少寬高接近 */
+  /* 如果圖片本身不是正方形，它會變成橢圓形 */
+  object-fit: cover; /* 讓圖片填滿圓形區域，可能裁切邊緣 */
+    /* 新增：邊框樣式 */
+  border: 0 px solid #232121; /* 3px 寬度，實線，淺灰色 */
+  /* 您可以根據喜好調整邊框的寬度、樣式（solid, dashed, dotted）和顏色 */
+    /* 新增：陰影樣式 */
+  box-shadow: 0 4px 8px #8B4513; /* 這裡是一個柔和的陰影範例 */
+  /* 您可以根據喜好調整陰影的參數 */
+}
+
+/* 設定每個專案區塊的樣式 */
+.talk-item {
+  background-color: #FFFFFF;
+  border-left: 5px solid var(--quarto-link-color); /* 左側的垂直色塊 */
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 懸停時的效果 */
+.talk-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* 確保圖片填滿容器且比例不變 */
+.talk-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+#Q:我要把版面拉寬
+.even {
+    width: 80% !important; /* 設定寬度為20% */
+    height: 1000px !important; /* 根據需要調整高度 */
+    overflow-y: auto; /* 內容過多時啟用滾動條 */
+    box-sizing: border-box; /* 包括padding和border在內的寬度計算 */
+}
+
+
+
