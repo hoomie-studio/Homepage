@@ -50,7 +50,7 @@ code {
   background-color: transparent !important; /* 深色背景 */
   color: #fff3bf!important; /* 設定顏色 */
   font-weight: bold !important; /* 內文字體不加粗 */
-  font-size: 0.8rem !important; /* 調整字體大小 */
+  font-size: 0.9rem !important; /* 調整字體大小 */
 }
 
 .highlight-pink {
@@ -157,4 +157,10 @@ a.reference-link {
 /* 設定頁面主標題的樣式 */
 .quarto-title-block h1 {
   font-weight: bold;
+}
+
+.no-indent {
+  text-indent: 0 !important;
+  max-width: 820px; /* 新增：限制段落最大寬度以縮短每行文字數量 */
+   margin: 0 auto; /* 新增：將段落置中 */
 }
