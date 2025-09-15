@@ -1,7 +1,7 @@
 ---
 title: "Blog 部落格"
 listing:
-  id: sample-listings
+- id: sample-listings
   sort: "date desc"
   type: grid
   page-size: 6
@@ -9,7 +9,7 @@ listing:
   sort-ui: [title, date]
   categories: true
   contents: 
-    - project1.yaml
+   - project1.yaml
 ---
 
 You can review the following documents for additional information:
