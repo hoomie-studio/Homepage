@@ -9,7 +9,7 @@
   image: "pic/自動販賣機.png"
   description:     
     <p>藉由操作DJI無人機取得多張環繞販賣機的影像，並透過PIX4D軟體進行影像匹配與建模。</p>
-  path: "docs/UAV.HTML"
+  path: "UAV.html"
   categories: [112-2, UAV ,攝影測量]
 
 - title: "整理常用的開放資料"
