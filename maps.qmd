@@ -12,6 +12,24 @@ format:
 <br><br>
 <iframe src="LEAFMAP2.html" width=100% height="800" ></iframe>
 
+### 分析與比較
+::::: columns
+
+::: {.column width="50%" }  
+### 總體增長趨勢
+
+<iframe src="總成長分析.html" width="70%" height="300" frameborder="0"></iframe>
+:::
+
+::: {.column width="50%" style="padding-left: 15px;"}
+### 各縣市增減分析
+
+<iframe src="縣市彙總.html" width="100%" height="300" frameborder="0"></iframe>
+:::
+:::::
+
+
+
 ## 阿公店的分布特徵 
 
 <p class="no-indent">專注在空間資訊的研究者 支持專區的成立經過全台的盤點及調查我們可以大致觀察到以下的現象特徵:</p>
@@ -85,6 +103,7 @@ format:
 
  工業區、農業區，首先是居民多半無意願，也對生活造成困擾，其次由於地處偏僻對雙方而言無法保障人身安全， 尤其夜間燈光極度昏暗，容易產稱治安問題。
  
+
  <hr>
  
 ### 參考文獻 
