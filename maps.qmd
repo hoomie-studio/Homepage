@@ -110,6 +110,11 @@ format:
 
  <hr>
  
+### 國際案例
+
+根據文獻提供店家分布，加州灣區目前共有10492家養生館。
+
+<iframe src="US_map.html" width=100% height="700" ></iframe>
 ### 參考文獻 
 
 -   
