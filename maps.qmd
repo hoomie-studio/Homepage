@@ -8,14 +8,18 @@ format:
 ---
 
 
-專案內容：結合leafmap各式定位功能以及撰寫geocoding，完成全台養生館商家地圖，當中羅列各式資訊
-<br><br>
+<p class="no-indent">專案內容：結合leafmap各式定位功能以及撰寫geocoding，完成全台養生館商家地圖，當中羅列各式資訊。 </p>
+<br>
 <iframe src="LEAFMAP4.html" width=100% height="700" ></iframe>
 
 ### 分析與比較
 ::::: columns
-<iframe src="LEAFMAP對比.html" width=100% height="800" ></iframe>
+<p class="no-indent">使用addSidebyside功能並排顯示時序資料，比較各縣市的增減變化，拖動滑桿可以查看不同時間點的分布情況。資料時間為9至10月。</p>
+<br>
+<iframe src="LEAFMAP對比.html" width=100% height="500" ></iframe>
+
 ::: {.column width="50%" }  
+
 ### 總體增長趨勢
 
 <iframe src="總成長分析.html" width="70%" height="300" frameborder="0"></iframe>
