@@ -3,6 +3,7 @@ git remote add origin <URL> - 添加遠端
 git branch -M main - 重命名主分支
 git add --all - 添加所有變更
 git commit -m "<訊息>" - 提交變更
+git commit -m "<Add new map>"
 git push -u origin main - 推送到遠端
 #
 # 總結：設定遠端倉庫，重命名主分支，添加並提交所有更改，最後推送代碼到 GitHub。

@@ -29,3 +29,11 @@ format:
     monofont: courier new
     editor: visual
     max-width: 1500px
+language:
+  languages: [zh, en] 
+  default: zh             
+  zh:
+    label: "中文"
+  en:
+    label: "English"
+

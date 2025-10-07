@@ -112,9 +112,12 @@ format:
  
 ### 國際案例
 
-根據文獻提供店家分布，加州灣區目前共有10492家養生館。
+根據文獻 Where and why do illicit businesses cluster? Comparing sexually oriented massage parlors in Los Angeles County and New York City(Chin JJ, Takahashi LM, Wiebe DJ.)，透過局部群聚空間自相關檢定(LISA)與迴歸模型(GWR)，結果指出在LAC，聚集現像出現在亞裔和西班牙裔居民較多的地區。在紐約市，聚集現象主要發生在曼哈頓，且與家庭規模呈負相關。地方法規似乎並未影響聚集現象，表示群聚為自然形成非受政策導向下影響。引用研究方法提供店家分布，加州灣區目前共有10492家養生館。
 
 <iframe src="US_map.html" width=100% height="700" ></iframe>
+<hr>
+<iframe src="usa_store_map.html" width=100%  ></iframe>
+
 ### 參考文獻 
 
 -   
