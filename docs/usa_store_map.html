@@ -1,3 +1,22 @@
+<style>
+/* 確保整個頁面填滿視窗，並設定統一的黑色背景 */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; 
+  background-color: #121212 !important; /* 使用 !important 確保覆蓋任何內嵌的白色設定 */
+}
+
+/* 讓 deckgl 容器也繼承全高，填滿父元素 body */
+.html-widget, #htmlwidget_container, #htmlwidget-3c227cb7e07f064cfb4d {
+  height: 100% !important; 
+  width: 100% !important;
+}
+
+/* 移除或忽略 <head> 內的 <style>body{background-color:white;}</style> */
+</style>
 <!DOCTYPE html>
 <html lang="en">
 <head>
