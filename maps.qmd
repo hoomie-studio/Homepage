@@ -117,13 +117,19 @@ format:
 <iframe src="US_map.html" width=100% height="700" ></iframe>
 <hr>
 
+### 空間分布
+
+<iframe src="US_map_all.html" width=100% height="600" ></iframe>
+<hr>
+
 ### 數據可視化
 
 以3公里作為空間範圍，透過3D方式呈現養生館的密度分布，顏色越深表示密度越高。密度最高的區域位於紐約灣區，
-高度群聚在某個街區，然而分布最多包含舊金山市、奧克蘭市、聖荷西市等地，這些地區有較多的亞裔人口，且經濟較為發達。
+高度群聚在某個街區，然而分布最多包含舊金山市、奧克蘭市、聖荷西市等地，這些地區有較多的亞裔人口，且經濟較為發達。<br>
 
 <iframe src="usa_store_map.html" width=100% height="600" ></iframe>
 <a href="usa_store_map.html">全螢幕觀看</a>
+<hr>
 
 ### 參考文獻 
 
