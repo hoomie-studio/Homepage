@@ -8,7 +8,7 @@ format:
 ---
 
 
-<p class="no-indent">專案內容：結合leafmap各式定位功能以及撰寫geocoding，完成全台養生館商家地圖，當中羅列各式資訊。 </p>
+<p class="no-indent">專案內容：結合leafmap各式定位功能以及撰寫geocoding，完成全台養生館商家地圖，當中羅列各式資訊。目前新增加查看街景影像及路徑規劃功能，預設以最佳路徑。 </p>
 <br>
 <iframe src="LEAFMAP4.html" width=100% height="700" ></iframe>
 
@@ -119,6 +119,8 @@ format:
 
 ### 空間分布
 
+來自全美的所有養生館店家，總計約有4萬家，多以分布在各城市的唐人街。
+<br>
 <iframe src="US_map_all.html" width=100% height="600" ></iframe>
 <hr>
 
