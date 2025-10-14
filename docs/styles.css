@@ -168,14 +168,7 @@ h1 {
   margin-bottom: 1.5rem; /* 新增此行以增加標題與內文的間隙 */
 }
 
-code {
-  font-family: "dutchbi", sans-serif !important; /* 設定字體 */
-  background-color: #c4c4c4 !important; /* 深色背景 */
-  color: #FFFFFF !important; /* 設定顏色 */
-  font-weight: bold !important; /* 內文字體不加粗 */
-  font-size: 1.1rem !important; /* 調整字體大小 */
-  text-shadow: 1px 1px 2px #000000; /* 設定陰影 */
-}
+
 
 /* 新增的分類標籤樣式 */
 .listing-category {
@@ -271,5 +264,107 @@ body .quarto-listing-header .listing-sort a:hover {
   text-align: center;
   overflow: hidden;
   position: relative;
+}
+
+
+/* 1. 調整整個程式碼區塊的容器樣式 (包含程式碼和輸出) */
+/* 使用圖片中柔和的淺紫色/淺粉色作為背景，並增加大圓角 */
+.cell {
+  /* 使用一個柔和的淺色背景 */
+  background-color: #f7f3ed; /* 使用您現有 listing-category 的顏色，或自訂一個柔和的淺紫色 */
+  /* background-color: #e6e0f8; */ /* 另一個淺紫色的選擇 */
+  background-color: #F7F0F7; /* 接近圖片的淺淡紫 */
+  
+  /* 設置一個較大的圓角 */
+  border-radius: 15px; 
+  
+  /* 移除邊框和多餘的陰影，讓它看起來像浮在頁面上 */
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 輕微柔和的陰影 */
+  
+  margin-bottom: 25px; /* 確保與其他內容有間距 */
+  position: relative; /* 用於定位模擬的視窗按鈕 */
+  padding-top: 30px; /* 為頂部的圓點留出空間 */
+}
+
+
+/* 2. 模擬頂部視窗控制按鈕 */
+/* 使用 ::before 偽元素來創建按鈕 */
+.cell::before {
+  content: '•••'; /* 使用 Unicode 圓點，或三個單獨的圓點 */
+  font-size: 1.2rem;
+  line-height: 1;
+  color: #c4c4c4; /* 圓點的顏色 */
+  
+  /* 定位在容器頂部中心 */
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  
+  /* 可以使用自定義的圓點，例如：
+  content: '';
+  display: block;
+  width: 12px;
+  height: 12px;
+  background-color: #ff605c; 
+  border-radius: 50%;
+  box-shadow: 20px 0 0 #ffbd44, 40px 0 0 #00ca4e; 
+  */
+}
+
+
+/* 3. 程式碼內容的樣式（code input / 程式碼輸入區） */
+/* 程式碼和輸出使用相同的背景，所以這裡只需要設置內邊距和字體顏色 */
+.cell-code {
+  background-color: transparent !important; /* 確保透明 */
+  padding: 0 20px 5px 20px; /* 調整左右邊距和底部間距 */
+  border: none; /* 移除任何邊框 */
+}
+
+/* 針對程式碼區塊內的程式碼文字 */
+.cell-code code {
+  font-family: monospace, "dutchbi", sans-serif !important; 
+  background-color: transparent !important; 
+  color: #333333 !important; /* 深灰色文字，模仿圖片中的深色文字 */
+  font-weight: normal !important; 
+  font-size: 1rem !important;
+  text-shadow: none !important; 
+}
+
+
+/* 4. 程式碼輸出內容的樣式（code output / 程式碼輸出區） */
+/* 輸出內容與程式碼輸入內容保持一致的背景和字體風格 */
+.cell-output {
+  padding: 5px 20px 20px 20px; /* 調整頂部和底部間距 */
+  background-color: transparent !important; /* 確保透明 */
+}
+
+/* 針對標準輸出（例如 print() 的內容） */
+.cell-output-stdout {
+  color: #333333; /* 輸出文字使用深灰色 */
+  font-family: monospace, sans-serif !important; /* 讓輸出結果也使用等寬字體 */
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+code {
+  font-family: "dutchbi", sans-serif !important; /* 設定字體 */
+  background-color: #FFFFFF !important; /* 深色背景 */
+  color: #4d425f !important; /* 設定顏色 */
+  font-weight: bold !important; /* 內文字體不加粗 */
+  font-size: 1.1rem !important; /* 調整字體大小 */
+}
+
+.cell {
+  background-color: #F7F0F7; 
+  
+  border-radius: 15px; 
+  border: none; /* << 確保這裡沒有邊框 */
+  
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  
+  margin-bottom: 25px; 
+  position: relative; 
+  padding-top: 30px; 
 }
 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>養生館尋訪地圖 – Hoomie studio</title>
+<title>python-note – Hoomie studio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -70,7 +105,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="dark-mode.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -107,7 +141,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Blog 部落格</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./maps.html" aria-current="page"> 
+    <a class="nav-link" href="./maps.html"> 
 <span class="menu-text">maps</span></a>
   </li>  
 </ul>
@@ -138,17 +172,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#分析與比較" id="toc-分析與比較" class="nav-link active" data-scroll-target="#分析與比較">分析與比較</a></li>
-  <li><a href="#阿公店的分布特徵" id="toc-阿公店的分布特徵" class="nav-link" data-scroll-target="#阿公店的分布特徵">阿公店的分布特徵</a>
-  <ul class="collapse">
-  <li><a href="#結論" id="toc-結論" class="nav-link" data-scroll-target="#結論">結論</a></li>
-  <li><a href="#最佳區位" id="toc-最佳區位" class="nav-link" data-scroll-target="#最佳區位">最佳區位</a></li>
-  <li><a href="#最差區位" id="toc-最差區位" class="nav-link" data-scroll-target="#最差區位">最差區位</a></li>
-  <li><a href="#國際案例" id="toc-國際案例" class="nav-link" data-scroll-target="#國際案例">國際案例</a></li>
-  <li><a href="#空間分布" id="toc-空間分布" class="nav-link" data-scroll-target="#空間分布">空間分布</a></li>
-  <li><a href="#數據可視化" id="toc-數據可視化" class="nav-link" data-scroll-target="#數據可視化">數據可視化</a></li>
-  <li><a href="#參考文獻" id="toc-參考文獻" class="nav-link" data-scroll-target="#參考文獻">參考文獻</a></li>
-  </ul></li>
+  <li><a href="#除法運算" id="toc-除法運算" class="nav-link active" data-scroll-target="#除法運算">除法運算</a></li>
+  <li><a href="#判斷文字位置" id="toc-判斷文字位置" class="nav-link" data-scroll-target="#判斷文字位置">判斷文字位置</a></li>
+  <li><a href="#while-迴圈用法" id="toc-while-迴圈用法" class="nav-link" data-scroll-target="#while-迴圈用法">while 迴圈用法</a></li>
   </ul>
 </nav>
     </div>
@@ -157,7 +183,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">養生館尋訪地圖</h1>
+<h1 class="title">python-note</h1>
 </div>
 
 
@@ -174,136 +200,61 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p class="no-indent">
-專案內容：結合leafmap各式定位功能以及撰寫geocoding，完成全台養生館商家地圖，當中羅列各式資訊。目前新增加查看街景影像及路徑規劃功能，預設以最佳路徑。
-</p>
-<p><br> <iframe src="LEAFMAP4.html" width="100%" height="700"></iframe></p>
-<section id="分析與比較" class="level3">
-<h3 class="anchored" data-anchor-id="分析與比較">分析與比較</h3>
-<div class="columns">
-<p class="no-indent">使用addSidebyside功能並排顯示時序資料，比較各縣市的增減變化，拖動滑桿可以查看不同時間點的分布情況。資料時間為9至10月。</p><p><br> <iframe src="LEAFMAP對比.html" width="100%" height="500"></iframe></p><div class="column" style="width:50%;">
-<section id="總體增長趨勢" class="level3">
-<h3 class="anchored" data-anchor-id="總體增長趨勢">總體增長趨勢</h3>
-<iframe src="總成長分析.html" width="70%" height="300" frameborder="0">
-</iframe>
-</section>
-</div><div class="column" style="padding-left: 15px;">
-<section id="各縣市增減分析" class="level3">
-<h3 class="anchored" data-anchor-id="各縣市增減分析">各縣市增減分析</h3>
-<iframe src="縣市彙總.html" width="100%" height="300" frameborder="0">
-</iframe>
-</section>
+<section id="除法運算" class="level2">
+<h2 class="anchored" data-anchor-id="除法運算">除法運算</h2>
+<div id="bb57ec88" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>bottle<span class="op">=</span><span class="dv">50</span> <span class="co">#你要買幾瓶？</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>打數<span class="op">=</span>bottle<span class="op">//</span><span class="dv">12</span>  <span class="co"># bottle//12代表整除</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>瓶數<span class="op">=</span>bottle<span class="op">%</span><span class="dv">12</span>   <span class="co"># bottle%12代表餘數</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"你需要買"</span>,打數,<span class="st">"打"</span>,瓶數,<span class="st">"瓶"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>       <span class="st">"總共"</span>,打數<span class="op">*</span><span class="dv">300</span><span class="op">+</span>瓶數<span class="op">*</span><span class="dv">30</span>,<span class="st">"元"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>你需要買 4 打 2 瓶 總共 1260 元</code></pre>
 </div>
 </div>
 </section>
-<section id="阿公店的分布特徵" class="level2">
-<h2 class="anchored" data-anchor-id="阿公店的分布特徵">阿公店的分布特徵</h2>
-<p class="no-indent">
-專注在空間資訊的研究者 支持專區的成立經過全台的盤點及調查我們可以大致觀察到以下的現象特徵:
-</p>
-<hr>
-<p><span class="highlight-pink">公園型</span></p>
-<p class="no-indent">
-首先是阿公店不知道為甚麼總是出現在公園旁邊，原因可能是公園是人們休閒的場所 ，阿公店提供了社交和放鬆的空間，吸引了許多老年人和工人階層前來聚集
-</p>
-<p><code>萬華艋舺公園</code> / <code>台中公園</code> / <code>高雄鳳山</code></p>
-<p><img src="鳳山.png" class="img-fluid" width="411"></p>
-<hr>
-<p><span class="highlight-pink">鐵支路型</span></p>
-<p class="no-indent">
-會群聚在鐵道附近理由可能是，鐵道旁一般人比較不容易行經也較為隱蔽，而且離車站不遠交通便利
-</p>
-<p><code>雲林虎尾鐵支路</code> / <code>基隆龍安路</code> / <code>台南新營糖廠</code></p>
-<p><img src="基隆.png" class="img-fluid" width="411"></p>
-<hr>
-<p><span class="highlight-pink">住商大樓</span></p>
-<p class="no-indent">
-再來則是馬路邊或是騎樓，由於交通方便，且會去這種店的客人許多為工人階層
-</p>
-<p><code>高雄的電信大樓</code> / <code>高雄九如路</code></p>
-<p><img src="電信大樓.png" class="img-fluid" width="411"></p>
-<hr>
-<p><span class="highlight-pink">傳統豆干厝</span></p>
-<p class="no-indent">
-最後則是傳統的豆干厝，這類店家通常會在巷弄內，可能會在軍營、暗巷或是鐵皮屋旁，且客人多為熟客， 環境較為簡陋
-</p>
-<p><code>西勢美豆干厝</code> / <code>萬華西園路巷弄的阿公店</code> / <code>桃園中壢的三仙巷</code> / <code>屏東榮民之家</code> / <code>台中豐原</code>/ <code>屏東西市場</code></p>
-<p><img src="三仙巷.png" class="img-fluid" width="411"></p>
-<hr>
-<p><span class="highlight-pink">工廠違建型</span></p>
-<p class="no-indent">
-這類店家通常會在工業區或是工廠附近，可能會在工業區的違建或是工廠的後門，且客人多為工人階層，但根據理論來說此種區位最不適合開設阿公店，因為工業區的治安較差，晚上大家都下班回家，逗留在那裏容易形成治安死角，沒有人可以保證你的安全
-</p>
-<p><code>桃園中壢的雙連坡</code> / <code>新竹榮光路上</code> / <code>彰化花壇鄉(已關閉)</code></p>
-<p><img src="榮光路.png" class="img-fluid" width="411"></p>
-<hr>
-<section id="結論" class="level3">
-<h3 class="anchored" data-anchor-id="結論">結論</h3>
-<p>這些阿公店的分布特徵顯示出它們與周圍環境的密切關聯，無論是公園、鐵道、住商大樓還是傳統豆干厝，都反映了社區文化和生活方式的多 樣性。這些店家不僅是社交場所，也是地方文化的一部分，承載著歷史和人情味。 但是有幾點必須要多加注意，根據珍雅各的理論其實專區應該設置在越熱鬧的地區，走在路上有路人幫忙監視起到鄰里 守望的作用，以保護顧客的安全，然而這些阿公店大多數都設置在偏僻的巷弄或是工業區，這樣的區位選擇可能會 導致治安問題，尤其是在夜晚時分，缺乏人流和監視可能會增加犯罪風險。對雙方都會造成困擾，顧客可能會因為安全問題而不願意光顧，而店家則可能面臨治安風險和經營困難。</p>
+<section id="判斷文字位置" class="level2">
+<h2 class="anchored" data-anchor-id="判斷文字位置">判斷文字位置</h2>
+<div id="3ee50e0d" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>e<span class="op">=</span><span class="st">"123456789@go.utaipei.edu.tw"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>位置<span class="op">=</span>e.find(<span class="st">"@"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(位置) </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>eamil<span class="op">=</span>e[位置<span class="op">+</span><span class="dv">1</span>:] <span class="co">#@往後，不要小老鼠</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(eamil)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>9
+go.utaipei.edu.tw</code></pre>
+</div>
+</div>
 </section>
-<section id="最佳區位" class="level3">
-<h3 class="anchored" data-anchor-id="最佳區位">最佳區位</h3>
-<p>公園旁、鐵道旁、住商大樓旁，這些區位通常交通便利且人流較多，能夠提供顧客方便的進出路線，同時也能夠增加店家的曝光率和吸引力。 這些區位通常位於商業區但不應過於繁忙只要存在部分人流就好，顧客也希望有隱蔽性。</p>
-</section>
-<section id="最差區位" class="level3">
-<h3 class="anchored" data-anchor-id="最差區位">最差區位</h3>
-<p>工業區、農業區，首先是居民多半無意願，也對生活造成困擾，其次由於地處偏僻對雙方而言無法保障人身安全， 尤其夜間燈光極度昏暗，容易產稱治安問題。</p>
-<hr>
-</section>
-<section id="國際案例" class="level3">
-<h3 class="anchored" data-anchor-id="國際案例">國際案例</h3>
-<p>根據文獻 Where and why do illicit businesses cluster? Comparing sexually oriented massage parlors in Los Angeles County and New York City(Chin JJ, Takahashi LM, Wiebe DJ.)，透過局部群聚空間自相關檢定(LISA)與迴歸模型(GWR)，結果指出在LAC，聚集現像出現在亞裔和西班牙裔居民較多的地區。在紐約市，聚集現象主要發生在曼哈頓，且與家庭規模呈負相關。地方法規似乎並未影響聚集現象，表示群聚為自然形成非受政策導向下影響。引用研究方法提供店家分布，加州灣區目前共有10492家養生館。</p>
-<iframe src="US_map.html" width="100%" height="700">
-</iframe>
-<hr>
-</section>
-<section id="空間分布" class="level3">
-<h3 class="anchored" data-anchor-id="空間分布">空間分布</h3>
-來自全美的所有養生館店家，總計約有4萬家，多以分布在各城市的唐人街。 <br> <iframe src="US_map_all.html" width="100%" height="600"></iframe>
-<hr>
-</section>
-<section id="數據可視化" class="level3">
-<h3 class="anchored" data-anchor-id="數據可視化">數據可視化</h3>
-<p>以3公里作為空間範圍，透過3D方式呈現養生館的密度分布，顏色越深表示密度越高。密度最高的區域位於紐約灣區， 高度群聚在某個街區，然而分布最多包含舊金山市、奧克蘭市、聖荷西市等地，這些地區有較多的亞裔人口，且經濟較為發達。<br></p>
-<iframe src="usa_store_map.html" width="100%" height="600">
-</iframe>
-<a href="usa_store_map.html">全螢幕觀看</a>
-<hr>
-</section>
-<section id="參考文獻" class="level3">
-<h3 class="anchored" data-anchor-id="參考文獻">參考文獻</h3>
-<ul>
-<li><ol type="1">
-<li><a href="https://www.jenjacobs.com/">珍雅各理論</a></li>
-</ol></li>
-<li><ol start="2" type="1">
-<li><a href="https://www.books.com.tw/products/0010883530?srsltid=AfmBOoqeGkS03PQ8QHL9cE0DbRDQLSBy0Beu6IC0FuvwhIxWqX0IOnzO">樓鳳，性淘金產業大揭密：警察帶路，立馬看懂江湖規矩，菜雞一夜成為老司機，乖乖女聽懂所有men’s talk</a></li>
-</ol></li>
-<li><ol start="3" type="1">
-<li><a href="https://www.books.com.tw/products/0010980610?srsltid=AfmBOopdZPDPX5jn5Hzo8Vv5Yd8A-iN2KrSuK2os4rJ_3N_qQUuNAM-S">我在荷蘭當都更說客：阿姆斯特丹以人為本的10年街區再生筆記</a></li>
-</ol></li>
-<li><ol start="4" type="1">
-<li><a href="https://www.books.com.tw/products/0010895473?srsltid=AfmBOoomqT6N7YNNpKQSkCkJa-MTKilDnJqIFqcK8_42JwBUHwhE3eBD">手槍女王 HAND JOB QUEEN：一個從業職人的真情告白</a></li>
-</ol></li>
-<li><ol start="5" type="1">
-<li><a href="https://www.tandfonline.com/doi/full/10.1080/01639625.2022.2110542#abstract">A Network Approach to Examine Neighborhood Interdependence Through the Target Selection of Repeat Buyers of Commercial Sex in the United States</a></li>
-</ol></li>
-<li><ol start="6" type="1">
-<li><a href="https://pubmed.ncbi.nlm.nih.gov/32982037/">Where and why do illicit businesses cluster? Comparing sexually oriented massage parlors in Los Angeles County and New York City</a></li>
-</ol></li>
-<li><ol start="7" type="1">
-<li><a href="https://www.tandfonline.com/doi/full/10.1080/23322705.2021.1982238#abstract">Why are You Here? Modeling Illicit Massage Business Location Characteristics with Machine Learning</a></li>
-</ol></li>
-<li><ol start="8" type="1">
-<li><a href="https://www.tandfonline.com/doi/full/10.1080/21681376.2024.2334057?src=recsys#d1e137">What makes neighbourhood-level commercial centres attractive for neighbourhood residents?</a></li>
-</ol></li>
-<li><ol start="9" type="1">
-<li><a href="https://www.tandfonline.com/doi/full/10.1080/23754931.2018.1425633?src=recsys">The Red-Light Network: Exploring the Locational Strategies of Illicit Massage Businesses in Houston, Texas</a></li>
-</ol></li>
-</ul>
+<section id="while-迴圈用法" class="level2">
+<h2 class="anchored" data-anchor-id="while-迴圈用法">while 迴圈用法</h2>
+<div id="f6e5134d" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>total  <span class="op">=</span><span class="dv">1</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> total <span class="op">&lt;</span> <span class="dv">100</span>:  </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">#會讓while迴圈的total逼近num，因為報錯的話程式會自動中斷</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="co">#故最後一遍必會等於或超過NUM(只要沒超出範圍就繼續)</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>   i <span class="op">=</span> i<span class="op">+</span><span class="dv">1</span>   <span class="co">#會從1開始</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>   total  <span class="op">=</span> total <span class="op">*</span>i</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="ss">f"次數 :</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">，加總 :</span><span class="sc">{</span>total <span class="sc">}</span><span class="ss">"</span>) </span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="op">-</span><span class="dv">1</span><span class="sc">}</span><span class="ss">!階&lt;100"</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">!階&gt;=100"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>次數 :1，加總 :1
+次數 :2，加總 :2
+次數 :3，加總 :6
+次數 :4，加總 :24
+次數 :5，加總 :120
+4!階&lt;100
+5!階&gt;=100</code></pre>
+</div>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

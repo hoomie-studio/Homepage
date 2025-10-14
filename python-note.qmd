@@ -1,0 +1,45 @@
+---
+title: "python-note"
+format:
+  html:
+    css: styles.css
+    page-layout: full
+---
+
+## 除法運算
+
+```{python}
+bottle=50 #你要買幾瓶？
+打數=bottle//12  # bottle//12代表整除
+瓶數=bottle%12   # bottle%12代表餘數
+
+print("你需要買",打數,"打",瓶數,"瓶",
+       "總共",打數*300+瓶數*30,"元") 
+```
+## 判斷文字位置
+
+```{python}
+e="123456789@go.utaipei.edu.tw"
+位置=e.find("@")
+print(位置) 
+eamil=e[位置+1:] #@往後，不要小老鼠
+print(eamil)
+```
+
+## while 迴圈用法
+
+```{python}
+total  =1
+i = 0
+
+while total < 100:  
+  #會讓while迴圈的total逼近num，因為報錯的話程式會自動中斷
+  #故最後一遍必會等於或超過NUM(只要沒超出範圍就繼續)
+   i = i+1   #會從1開始
+   total  = total *i
+   print(f"次數 :{i}，加總 :{total }") 
+
+print(f"{i-1}!階<100")
+print(f"{i}!階>=100")
+
+```

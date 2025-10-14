@@ -14,15 +14,6 @@ title: "UAV 無人機實習"
 
 </iframe>
 
-```{python}
-#| eval: false
-# 你的 Python 程式碼
-import cv2 # OpenCV 用於影像處理
-image = cv2.imread("logo.jpg")
-cv2.imshow("Test Image", image)
-cv2.waitKey(0) # 按任意鍵關閉視窗
-
-```
 
 
 
