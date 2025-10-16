@@ -15,7 +15,7 @@ website:
       - text: "maps"
         href: maps.qmd
       - text: "Navigation 3D"
-        href: navigation3D/3Dmap導航版.html
+        href: 3Dmap導航版.html
     right:
       - icon: github
         href: https://github.com/hoomie-studio

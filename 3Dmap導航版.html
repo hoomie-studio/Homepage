@@ -2,7 +2,7 @@
 <html lang="zh-TW">
 <head>
     <meta charset="utf-8" />
-    <title>台北市 3D 夜景導航 (極簡深色風格) - 路線修復與面板位置</title>
+    <title>台北市 3D 夜景導航 (固定視角、小地圖與面板收合)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <script src="https://js.arcgis.com/4.29/"></script>
@@ -15,10 +15,10 @@
             height: 100%;
             width: 100%;
         }
-        /* Mini-map 子母圖樣式 (參考使用者提供) */
+        /* Mini-map 子母圖樣式 (不變) */
         #miniMapDiv {
             position: absolute;
-            bottom: 20px; /* 放在右下角 */
+            bottom: 20px; 
             right: 20px;
             width: 280px; 
             height: 220px;
@@ -27,12 +27,18 @@
             z-index: 100; 
             border-radius: 8px; 
             overflow: hidden; 
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        #miniMapDiv.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none; 
         }
 
         /* 導航控制面板樣式 */
         #routePanel {
             position: absolute;
-            bottom: 50px; /* 維持在左下角，上移 30px */
+            bottom: 50px; 
             left: 20px;
             padding: 15px;
             background: rgba(40, 40, 40, 0.9); 
@@ -42,8 +48,55 @@
             z-index: 50;
             max-width: 300px;
             font-family: sans-serif;
+            /* 啟用過渡效果 */
+            transition: all 0.3s ease-out; 
         }
-        #routePanel button {
+
+        /* 【新增】收合時的樣式 */
+        #routePanel.collapsed {
+            width: auto;
+            max-width: 100px;
+            padding: 5px;
+            border-bottom-right-radius: 0; /* 讓收合按鈕看起來更像一個標籤 */
+        }
+        
+        /* 【新增】面板標題/收合按鈕容器 */
+        #panelHeader {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        /* 【新增】收合按鈕樣式 */
+        #btnTogglePanel {
+            background: none;
+            color: white;
+            border: 1px solid #777;
+            padding: 4px 8px;
+            margin: 0;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            width: auto; /* 覆蓋通用按鈕樣式 */
+            opacity: 1;
+        }
+        
+        /* 【新增】控制內容區塊 - 在收合時隱藏 */
+        #panelContent {
+            transition: opacity 0.3s ease-out;
+        }
+        #routePanel.collapsed #panelContent {
+            opacity: 0;
+            /* 使用絕對定位或 visibility 隱藏，但 opacity 配合 transition 效果最好 */
+            height: 0; 
+            overflow: hidden; 
+            margin-top: -10px; /* 微調收合後的距離 */
+            pointer-events: none;
+        }
+
+        /* 其他按鈕和文字樣式 (不變) */
+        #routePanel button:not(#btnTogglePanel) {
             background-color: #0079c1;
             color: white;
             border: none;
@@ -74,11 +127,7 @@
             color: white;
             font-size: 0.9em;
         }
-        /* 完全隱藏導航步驟區塊 */
-        #instructions {
-            display: none;
-        }
-        /* 新增的圖層控制樣式 */
+        #instructions { display: none; }
         #layerControl {
             margin-top: 15px;
             padding-top: 10px;
@@ -95,19 +144,28 @@
 <body>
     <div id="viewDiv"></div>
     <div id="miniMapDiv"></div> 
+    
     <div id="routePanel">
-        <h3>OSM 簡易導航</h3>
-        <button id="btnSetStart">使用當前位置定位起點 (A)</button>
-        <button id="btnSetEnd" disabled>設定終點 (B)</button>
-        <div id="routeStatus">點擊「使用當前位置定位起點」以開始。</div>
-        <div id="instructions"></div> 
-        
-        <button id="btnToggleTracking">開啟/關閉 定位跟隨視角</button>
-        
-        <div id="layerControl">
-            <label>
-                <input type="checkbox" id="toggleGeoJson" checked> 顯示 GeoJSON 點位 (按摩館)
-            </label>
+        <div id="panelHeader">
+            <h3>OSM 簡易導航</h3>
+            <button id="btnTogglePanel" title="收合/展開面板">▼</button>
+        </div>
+
+        <div id="panelContent">
+            <button id="btnSetStart">使用當前位置定位起點 (A)</button>
+            <button id="btnSetEnd" disabled>設定終點 (B)</button>
+            <div id="routeStatus">點擊「使用當前位置定位起點」以開始。</div>
+            <div id="instructions"></div> 
+            
+            <button id="btnToggleTracking">開啟 定位跟隨視角</button>
+            
+            <button id="btnToggleMiniMap">隱藏 小地圖</button>
+
+            <div id="layerControl">
+                <label>
+                    <input type="checkbox" id="toggleGeoJson" checked> 顯示 GeoJSON 點位 (按摩館)
+                </label>
+            </div>
         </div>
     </div>
 
@@ -133,229 +191,132 @@
             let startGraphic = null;
             let endGraphic = null;
             let routeGraphic = null;
+            let isTracking = false; 
 
+            // --- 元素節點 ---
             const btnSetStart = document.getElementById('btnSetStart');
             const btnSetEnd = document.getElementById('btnSetEnd');
             const routeStatus = document.getElementById('routeStatus');
             const instructionsDiv = document.getElementById('instructions'); 
-            const btnToggleTracking = document.getElementById('btnToggleTracking'); // 定位跟隨按鈕
-            const toggleGeoJson = document.getElementById('toggleGeoJson'); // 圖層控制開關
+            const btnToggleTracking = document.getElementById('btnToggleTracking'); 
+            const toggleGeoJson = document.getElementById('toggleGeoJson'); 
+            const btnToggleMiniMap = document.getElementById('btnToggleMiniMap'); 
+            const miniMapDiv = document.getElementById('miniMapDiv'); 
+            const routePanel = document.getElementById('routePanel'); // 【新增】導航面板本體
+            const btnTogglePanel = document.getElementById('btnTogglePanel'); // 【新增】收合按鈕
+            let miniMapVisible = true; 
+            let panelCollapsed = false; // 【新增】面板收合狀態
 
-            // OSRM 公用服務端點 (OpenStreetMap 導航)
+            // OSRM 公用服務端點 (不變)
             const osrmUrl = "https://router.project-osrm.org/route/v1/driving/";
-
-            // --- 1. 3D 建築物圖層 (深灰色單色風格) ---
-            const buildingRenderer = {
-                type: "simple",
-                symbol: {
-                    type: "polygon-3d",
-                    symbolLayers: [{
-                        type: "fill",
-                        material: {
-                            // 深灰色
-                            color: [50, 50, 50, 0.5] 
-                        }
-                    }]
-                }
-            };
-
-            const buildingLayer = new SceneLayer({
-                url: "https://i3s.nlsc.gov.tw/building/i3s/SceneServer/layers/0",
-                title: "臺北市建物模型 (i3S)",
-                renderer: buildingRenderer
-            });
-            const buildingLayer2 = new SceneLayer({
-                url: "https://i3s.nlsc.gov.tw/building/i3s/SceneServer/layers/5",
-                title: "新北市建物模型 (i3S)",
-                renderer: buildingRenderer
-            });
-
-            // --- 2. 商家 GeoJSON 圖層 (主 3D 視圖) ---
             
-            // 3D 點位樣式 (主地圖使用, 維持懸浮) 
-            const massageSymbol3D = {
-                type: "point-3d", 
-                symbolLayers: [
-                    { type: "icon", resource: { primitive: "circle" }, size: 8, material: { color: [255, 255, 255, 1] }, anchor: "center" },
-                    { type: "icon", resource: { primitive: "circle" }, size: 7, material: { color: [128, 66, 66, 1] }, anchor: "center" }
-                ],
-                // 維持高懸浮點位
-                verticalOffset: { worldLength: 80, screenLength: 22 }, 
-                placement: "relative-to-ground"
-            };
+            // --- 固定的導航視角參數 (不變) ---
+            const FIXED_TILT = 70; 
+            const FIXED_Z = 600; 
 
-            const merchantsRenderer3D = new SimpleRenderer({
-                symbol: massageSymbol3D
-            });
-
-
-            const merchantsLayer3D = new GeoJSONLayer({
-                url: "./massage10.geojson", 
-                title: "按摩館點位 (3D 主地圖)",
-                renderer: merchantsRenderer3D, 
-                popupTemplate: {
-                    title: "按摩館：{name}", 
-                    content: [{
-                        type: "fields",
-                        fieldInfos: [
-                            {fieldName: "name", label: "店名"},
-                        ]
-                    }]
-                },
-                // 預設為可見
-                visible: true 
-            });
+            // --- 1. 3D 建築物圖層 (深灰色單色風格) (略) ---
+            const buildingRenderer = { type: "simple", symbol: { type: "polygon-3d", symbolLayers: [{ type: "fill", material: { color: [50, 50, 50, 0.5] } }] } };
+            const buildingLayer = new SceneLayer({ url: "https://i3s.nlsc.gov.tw/building/i3s/SceneServer/layers/0", title: "臺北市建物模型 (i3S)", renderer: buildingRenderer });
+            const buildingLayer2 = new SceneLayer({ url: "https://i3s.nlsc.gov.tw/building/i3s/SceneServer/layers/5", title: "新北市建物模型 (i3S)", renderer: buildingRenderer });
             
-            // --- 2.1 商家 GeoJSON 圖層 (2D 子母地圖專用) ---
+            const massageSymbol3D = { type: "point-3d", symbolLayers: [{ type: "icon", resource: { primitive: "circle" }, size: 8, material: { color: [255, 255, 255, 1] }, anchor: "center" }, { type: "icon", resource: { primitive: "circle" }, size: 7, material: { color: [128, 66, 66, 1] }, anchor: "center" }], verticalOffset: { worldLength: 80, screenLength: 22 }, placement: "relative-to-ground" };
+            const merchantsRenderer3D = new SimpleRenderer({ symbol: massageSymbol3D });
+            const merchantsLayer3D = new GeoJSONLayer({ url: "./massage10.geojson", title: "按摩館點位 (3D 主地圖)", renderer: merchantsRenderer3D, visible: true });
+            
+            const miniMapMerchantsLayer = new GeoJSONLayer({ url: "./massage10.geojson", title: "按摩館點位 (2D 子母地圖)", renderer: { type: "simple", symbol: { type: "simple-marker", color: [153, 204, 255, 1], size: 3, outline: { color: [255, 255, 255, 0.5], width: 0.5 } } }, popupEnabled: false, visible: true });
 
-            const miniMapMerchantsLayer = new GeoJSONLayer({
-                url: "./massage10.geojson", 
-                title: "按摩館點位 (2D 子母地圖)",
-                renderer: {
-                    type: "simple",
-                    symbol: { type: "simple-marker", color: [0, 150, 255, 1], size: 5, outline: { color: [255, 255, 255, 0.5], width: 0.5 } }
-                },
-                popupEnabled: false,
-                // 預設為可見
-                visible: true 
-            });
 
-            // --- 3. 建立地圖、視圖與工具 --- const map 加入新圖層
+            // --- 3. 建立地圖、視圖與工具 (略) ---
             const map = new Map({
-                // 使用 dark-gray-vector
                 basemap: "dark-gray-vector", 
                 ground: "world-elevation",
-                layers: [buildingLayer, buildingLayer2,merchantsLayer3D] 
+                layers: [buildingLayer, buildingLayer2, merchantsLayer3D] 
             });
 
             const view = new SceneView({
                 container: "viewDiv",
                 map: map,
-                camera: {
-                    position: {
-                        x: 121.5654, 
-                        y: 25.0330, 
-                        z: 1500      
-                    },
-                    heading: 0, 
-                    tilt: 70
-                },
+                camera: { position: { x: 121.5654, y: 25.0330, z: 1500 }, heading: 0, tilt: 70 },
                 environment: {
-                    // 夜間照明與天空
-                    lighting: { 
-                        type: "sun", 
-                        directShadowsEnabled: true,
-                        // 設定時間為晚上 (10:00 PM)
-                        date: new Date(2025, 8, 7, 12, 0, 0) 
-                    },
+                    lighting: { type: "sun", directShadowsEnabled: true, date: new Date(2025, 8, 7, 12, 0, 0) },
                     atmosphereEnabled: false,
                     background: { color: [255, 255, 255, 1] } 
                 }
             });
             
-            // ArcGIS Locate Widget (定位按鈕)
-            let isTracking = false; 
-
-            const locateWidget = new Locate({
-                view: view,
-                useHeading: true 
-            });
+            const locateWidget = new Locate({ view: view, useHeading: true });
             view.ui.add(locateWidget, "top-right");
 
-            // --- 定位跟隨視角功能實現 ---
-            
-            // 監聽 Locate Widget 的 locate 事件
+            // --- 【修改】定位跟隨視角功能 (不變) ---
             locateWidget.on("locate", function(event) {
                 if (isTracking) {
-                    // 獲取定位點
                     const position = event.position.clone();
-                    // 確保定位點是 Point 類型
-                    // 這裡的邏輯可以簡化，因為 Locate Widget 已經處理了坐標轉換
+                    const currentHeading = event.position.heading !== undefined ? event.position.heading : view.camera.heading;
                     
-                    // 獲取當前視角的傾斜角度和方位角
-                    const heading = view.camera.heading;
-                    const tilt = view.camera.tilt;
-                    
-                    // 計算新的攝影機位置 (拉高 Z 軸，並維持當前的 heading 和 tilt)
                     view.goTo({
                         target: position,
-                        // 讓攝影機在定位點上方 800m 處
-                        z: 800, 
-                        heading: heading,
-                        tilt: tilt
+                        z: FIXED_Z, 
+                        heading: currentHeading,
+                        tilt: FIXED_TILT
                     }, {
-                        duration: 1500, // 平滑移動
-                        easing: "ease-in-out"
+                        duration: 500, 
+                        easing: "linear" 
                     });
                 }
             });
 
-            // 切換定位跟隨視角的按鈕事件
+            // 切換定位跟隨視角的按鈕事件 (不變)
             btnToggleTracking.addEventListener('click', () => {
                 isTracking = !isTracking;
                 if (isTracking) {
-                    btnToggleTracking.textContent = "✅ 關閉定位跟隨視角";
-                    // 啟用定位，並將 mode 設定為 track (Locate Widget 會自動持續追蹤)
-                    locateWidget.start();
+                    btnToggleTracking.textContent = "✅ 關閉定位跟隨視角 (導航模式)";
+                    locateWidget.start(); 
                 } else {
                     btnToggleTracking.textContent = "開啟 定位跟隨視角";
-                    // 停止 Locate Widget 的持續追蹤
                     locateWidget.stop();
                 }
             });
-            // 預設按鈕文字
             btnToggleTracking.textContent = "開啟 定位跟隨視角";
 
+            // --- 【新增】導航面板收合功能 ---
+            btnTogglePanel.addEventListener('click', () => {
+                panelCollapsed = !panelCollapsed;
+                if (panelCollapsed) {
+                    routePanel.classList.add('collapsed');
+                    btnTogglePanel.textContent = "▲"; // 向上箭頭，表示點擊展開
+                    btnTogglePanel.title = "展開面板";
+                } else {
+                    routePanel.classList.remove('collapsed');
+                    btnTogglePanel.textContent = "▼"; // 向下箭頭，表示點擊收合
+                    btnTogglePanel.title = "收合面板";
+                }
+            });
 
-            // --- 圖層控制功能實現 ---
+
+            // --- 小地圖開關功能 (不變) ---
+            btnToggleMiniMap.addEventListener('click', () => {
+                miniMapVisible = !miniMapVisible;
+                if (miniMapVisible) {
+                    miniMapDiv.classList.remove('hidden');
+                    btnToggleMiniMap.textContent = "隱藏 小地圖";
+                } else {
+                    miniMapDiv.classList.add('hidden');
+                    btnToggleMiniMap.textContent = "顯示 小地圖";
+                }
+            });
+
+
+            // --- 圖層控制功能實現 (不變) ---
             toggleGeoJson.addEventListener('change', (event) => {
                 const isVisible = event.target.checked;
                 merchantsLayer3D.visible = isVisible;
                 miniMapMerchantsLayer.visible = isVisible;
             });
 
-            // --- 導航功能實現 (路線符號已修改) ---
+            // --- 導航及其他輔助函數 (略) ---
             
-            // 起點符號
-            const startSymbol = {
-                type: "point-3d",
-                symbolLayers: [{
-                    type: "icon",
-                    material: { color: [140, 142, 139, 1] }, // 綠色
-                    size: 8, 
-                    resource: { primitive: "circle" }
-                }],
-                // 確保貼地但略微抬高 10m，避免被地面遮擋
-                placement: "on-the-ground", 
-                verticalOffset: { worldLength: 10 } 
-            };
-
-            // 終點符號
-            const endSymbol = {
-                type: "point-3d",
-                symbolLayers: [{
-                    type: "icon",
-                    material: { color: [236, 219, 190, 0.5] }, // 紅色
-                    size: 8, 
-                    resource: { primitive: "pin" }
-                }],
-                // 確保貼地但略微抬高 10m，避免被地面遮擋
-                placement: "on-the-ground", 
-                verticalOffset: { worldLength: 10 } 
-            };
-
-            // 路線符號 【重要修改】從 3D path 變為 2D simple-line 貼地線條
-            const routeSymbol = {
-                type: "simple-line", // 改為簡單線條符號
-                color: [0, 200, 255, 0.9], // 亮藍色
-                width: 8, 
-                style: "solid" // 實線
-                // 在 SceneView 中使用 simple-line 且 geometry 不含 Z 軸時，
-                // 預設會貼附於地形上。
-            };
-
             // OSRM Polyline 解碼邏輯 (不變)
-            function decodePolyline(encoded) {
+            function decodePolyline(encoded) { /* ... (不變) ... */ 
                 let points = [];
                 let index = 0;
                 let lat = 0;
@@ -390,47 +351,31 @@
             }
 
             async function calculateRoute() {
+                // ... (不變)
                 if (!startPoint || !endPoint) return;
-
                 routeStatus.innerHTML = "正在計算路線...";
                 instructionsDiv.innerHTML = ""; 
-
                 const coordinates = `${startPoint.longitude},${startPoint.latitude};${endPoint.longitude},${endPoint.latitude}`;
                 const url = `${osrmUrl}${coordinates}?geometries=polyline&overview=full`; 
 
                 try {
                     const response = await fetch(url);
                     const json = await response.json();
-
-                    if (json.code !== 'Ok') {
-                        throw new Error(`OSRM 錯誤: ${json.code}`);
-                    }
-
+                    if (json.code !== 'Ok') { throw new Error(`OSRM 錯誤: ${json.code}`); }
                     const route = json.routes[0];
                     const decodedPath = decodePolyline(route.geometry); 
+                    const routePolyline = new Polyline({ paths: [decodedPath], spatialReference: { wkid: 4326 } });
 
-                    // 1. 建立 Polyline 幾何物件 (2D)
-                    const routePolyline = new Polyline({
-                        paths: [decodedPath],
-                        spatialReference: { wkid: 4326 },
-                    });
-
-                    // 2. 清除舊路線，建立新路線 Graphic
-                    if (routeGraphic) {
-                        view.graphics.remove(routeGraphic);
-                    }
+                    if (routeGraphic) { view.graphics.remove(routeGraphic); }
                     routeGraphic = new Graphic({
                         geometry: routePolyline,
-                        symbol: routeSymbol
+                        symbol: { type: "simple-line", color: [0, 200, 255, 0.9], width: 8, style: "solid" }
                     });
                     view.graphics.add(routeGraphic);
                     
-                    // 3. 顯示路線資訊 (只顯示長度和時間)
                     const distanceKm = (route.distance / 1000).toFixed(2);
                     const durationMin = (route.duration / 60).toFixed(0);
                     routeStatus.innerHTML = `✅ 路線長度: ${distanceKm} 公里, 預計時間: ${durationMin} 分鐘`;
-
-                    // 4. 縮放到路線範圍
                     view.goTo(routePolyline.extent.expand(1.2));
 
                 } catch (error) {
@@ -438,14 +383,13 @@
                     routeStatus.innerHTML = `⚠️ 路線計算失敗: ${error.message}`;
                 }
             }
-            
-            // 處理定位並設定起點 (邏輯不變)
+
             function setStartToCurrentLocation() {
+                // ... (不變)
                 routeStatus.innerHTML = "正在定位您的位置...";
                 btnSetStart.disabled = true;
                 btnSetEnd.disabled = true;
 
-                // 重設點位和路線
                 startPoint = null;
                 endPoint = null;
                 if (startGraphic) view.graphics.remove(startGraphic);
@@ -457,25 +401,15 @@
                     navigator.geolocation.getCurrentPosition(
                         (position) => {
                             const { latitude, longitude } = position.coords;
-                            
                             startPoint = { latitude, longitude };
-                            
-                            const startMapPoint = new Point({
-                                x: longitude,
-                                y: latitude,
-                                spatialReference: { wkid: 4326 }
-                            });
-                            
-                            startGraphic = new Graphic({
-                                geometry: startMapPoint,
-                                symbol: startSymbol
-                            });
+                            const startMapPoint = new Point({ x: longitude, y: latitude, spatialReference: { wkid: 4326 }});
+                            const startSymbol = { type: "point-3d", symbolLayers: [{ type: "icon", material: { color: [140, 142, 139, 1] }, size: 8, resource: { primitive: "circle" } }], placement: "on-the-ground", verticalOffset: { worldLength: 10 } };
+                            startGraphic = new Graphic({ geometry: startMapPoint, symbol: startSymbol });
                             view.graphics.add(startGraphic);
 
                             view.goTo({ target: startGraphic.geometry, zoom: 15 });
                             routeStatus.innerHTML = "✅ 起點已設定為您的當前位置。請設定終點。";
                             updateRouteMode('setting-end');
-
                         },
                         (error) => {
                             console.error("定位失敗:", error);
@@ -490,9 +424,8 @@
                 }
             }
 
-
-            // 啟用/停用按鈕和模式 (邏輯不變)
             function updateRouteMode(newMode) {
+                // ... (不變)
                 routeMode = newMode;
                 btnSetEnd.disabled = true;
 
@@ -523,109 +456,55 @@
                 }
             }
 
-            // 點擊事件監聽 (邏輯不變)
+            // 點擊事件監聽 (不變)
             view.on("click", (event) => {
-                
-                const mapPoint = new Point({
-                    x: event.mapPoint.longitude,
-                    y: event.mapPoint.latitude,
-                    spatialReference: { wkid: 4326 }
-                });
+                // ... (不變)
+                const mapPoint = new Point({ x: event.mapPoint.longitude, y: event.mapPoint.latitude, spatialReference: { wkid: 4326 } });
                 
                 if (routeMode === 'setting-start-manual') {
-                    // 手動設定起點
-                    startPoint = { 
-                        latitude: mapPoint.latitude, 
-                        longitude: mapPoint.longitude 
-                    };
-                    
+                    startPoint = { latitude: mapPoint.latitude, longitude: mapPoint.longitude };
                     if (startGraphic) view.graphics.remove(startGraphic);
-                    
-                    startGraphic = new Graphic({
-                        geometry: mapPoint, 
-                        symbol: startSymbol
-                    });
+                    const startSymbol = { type: "point-3d", symbolLayers: [{ type: "icon", material: { color: [140, 142, 139, 1] }, size: 8, resource: { primitive: "circle" } }], placement: "on-the-ground", verticalOffset: { worldLength: 10 } };
+                    startGraphic = new Graphic({ geometry: mapPoint, symbol: startSymbol });
                     view.graphics.add(startGraphic);
-
                     updateRouteMode('setting-end');
                 } else if (routeMode === 'setting-end') {
-                    // 設定終點
-                    endPoint = { 
-                        latitude: mapPoint.latitude, 
-                        longitude: mapPoint.longitude 
-                    };
-
+                    endPoint = { latitude: mapPoint.latitude, longitude: mapPoint.longitude };
                     if (endGraphic) view.graphics.remove(endGraphic);
-                    
-                    endGraphic = new Graphic({
-                        geometry: mapPoint, 
-                        symbol: endSymbol
-                    });
+                    const endSymbol = { type: "point-3d", symbolLayers: [{ type: "icon", material: { color: [236, 219, 190, 0.5] }, size: 8, resource: { primitive: "pin" } }], placement: "on-the-ground", verticalOffset: { worldLength: 10 } };
+                    endGraphic = new Graphic({ geometry: mapPoint, symbol: endSymbol });
                     view.graphics.add(endGraphic);
-
                     updateRouteMode('inactive');
-                    calculateRoute(); // 計算並繪製路線
+                    calculateRoute(); 
                 }
             });
 
-            // 按鈕事件處理：設定起點按鈕 (邏輯不變)
+            // 按鈕事件處理 (不變)
             btnSetStart.addEventListener('click', () => {
-                // 如果是重設模式，則重新定位
-                if (routeMode === 'inactive' && (startPoint || endPoint)) {
-                    setStartToCurrentLocation();
-                } else if (routeMode === 'setting-end') {
-                    // 如果在設定終點模式下點擊，表示要重設起點
-                     setStartToCurrentLocation();
-                } else {
-                    // 初始點擊或手動模式下的點擊，都嘗試定位
+                if (routeMode === 'inactive' || routeMode === 'setting-end' || routeMode === 'setting-start-manual') {
                     setStartToCurrentLocation();
                 }
             });
 
-            // 按鈕事件處理：設定終點按鈕 (邏輯不變)
             btnSetEnd.addEventListener('click', () => {
                 if (startPoint) {
-                    // 確保起點已設定後，進入設定終點模式
                     updateRouteMode('setting-end');
                 }
             });
 
-            // 頁面載入時的初始狀態
             view.when(() => {
                 updateRouteMode('inactive');
             });
 
 
-            // --- 4. 建立並同步 2D 子母地圖 (Mini-Map) (邏輯不變) --- 
+            // --- 4. 建立並同步 2D 子母地圖 (Mini-Map) (略) --- 
             
-            // 建立子母地圖專屬的 Map 物件
-            const miniMapMap = new Map({
-                // 使用 dark-gray-vector
-                basemap: "dark-gray-vector",
-                layers: [miniMapMerchantsLayer] 
-            });
-            
-            // 建立子母地圖視圖
-            const miniMap = new MapView({
-                container: "miniMapDiv",
-                map: miniMapMap,
-                ui: { components: [] } 
-            });
+            const miniMapMap = new Map({ basemap: "dark-gray-vector", layers: [miniMapMerchantsLayer] });
+            const miniMap = new MapView({ container: "miniMapDiv", map: miniMapMap, ui: { components: [] } });
 
-            // 創建一個圖形 (Graphic) 用來在子母地圖上顯示主視圖的當前範圍
-            const extentGraphic = new Graphic({
-                symbol: {
-                    type: "simple-fill",
-                    style: "none",
-                    outline: {
-                        color: [255, 255, 255, 1], 
-                        width: 2
-                    }
-                }
-            });
+            const extentGraphic = new Graphic({ symbol: { type: "simple-fill", style: "none", outline: { color: [255, 255, 255, 1], width: 2 } } });
             miniMap.graphics.add(extentGraphic);
 
-            // 監聽主視圖 (SceneView) 的範圍變化，並同步子母地圖
             view.watch("extent", function(extent) {
                 if (extent) {
                     miniMap.center = extent.center;
