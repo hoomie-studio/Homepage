@@ -1,1 +1,1 @@
-![](https://hoomie-studio.github.io/Homepage/)
+https://hoomie-studio.github.io/Homepage/
