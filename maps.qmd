@@ -4,6 +4,7 @@ format:
   html:
     css: dark-mode.css
     scrolling: true
+    toc: false
     page-layout: full # 新增這行
 ---
 

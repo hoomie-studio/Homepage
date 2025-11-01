@@ -5,6 +5,13 @@
   path: "http://rpubs.com/min_jhfdo/1301288"
   categories: [113-2, R語言]
   
+- title: "研究計畫"
+  image: "pic/騎樓.png"
+  description:     
+    <p>一張照片如何重繪街景3D模型？AI深度估計結合三角測量解讀城市空間的測繪研究。</p>
+  path: "https://youtu.be/RjGz9_InRCM?si=X2aKxfVIK-Wcy6LG"
+  categories: [GeoAI ]
+  
 - title: "python-note"
   image: "pic/ray-so-export.png"
   description:     

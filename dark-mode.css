@@ -159,8 +159,4 @@ a.reference-link {
   font-weight: bold;
 }
 
-.no-indent {
-  text-indent: 0 !important;
-  max-width: 820px; /* 新增：限制段落最大寬度以縮短每行文字數量 */
-   margin: 0 auto; /* 新增：將段落置中 */
-}
+
