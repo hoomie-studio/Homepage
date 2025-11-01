@@ -4,18 +4,18 @@ format:
   html:
     css: dark-mode.css
     scrolling: true
-    toc: false
+    toc: true
     page-layout: full # 新增這行
 ---
 
 
-<p class="no-indent">專案內容：結合leafmap各式定位功能以及撰寫geocoding，完成全台養生館商家地圖，當中羅列各式資訊。目前新增加查看街景影像及路徑規劃功能，預設以最佳路徑。 </p>
-<br>
+專案內容：結合leafmap各式定位功能以及撰寫geocoding，完成全台養生館商家地圖，當中羅列各式資訊。目前新增加查看街景影像及路徑規劃功能，預設以最佳路徑。 
+<br><br>
 <iframe src="LEAFMAP4.html" width=100% height="700" ></iframe>
 
 ### 分析與比較
 ::::: columns
-<p class="no-indent">使用addSidebyside功能並排顯示時序資料，比較各縣市的增減變化，拖動滑桿可以查看不同時間點的分布情況。資料時間為9至10月。</p>
+使用addSidebyside功能並排顯示時序資料，比較各縣市的增減變化，拖動滑桿可以查看不同時間點的分布情況。資料時間為9至10月。
 <br>
 <iframe src="LEAFMAP對比.html" width=100% height="500" ></iframe>
 
@@ -37,7 +37,7 @@ format:
 
 ## 阿公店的分布特徵 
 
-<p class="no-indent">專注在空間資訊的研究者 支持專區的成立經過全台的盤點及調查我們可以大致觀察到以下的現象特徵:</p>
+專注在空間資訊的研究者 支持專區的成立經過全台的盤點及調查我們可以大致觀察到以下的現象特徵:
 <hr>
 
 [公園型]{.highlight-pink}
