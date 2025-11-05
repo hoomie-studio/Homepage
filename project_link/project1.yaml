@@ -5,12 +5,22 @@
   path: "http://rpubs.com/min_jhfdo/1301288"
   categories: [113-2, R語言]
   
-- title: "研究計畫"
+- title: "臺灣萎縮城市環境感知之研究"
+  image: "pic/感知.png"
+  description:     
+    <p>釐清萎縮城市的視覺感知特徵、基於MIT Place pulse2.0數據集，使用ResNet模型建立客觀的量化評估方法，並為都市規劃與活化提供實證參考。</p>
+  author: 洪名佑
+  path: "https://youtu.be/EsNtNj2n7sM?si=g85SfTLWc601dK3v"
+  categories: [GeoAI ,Place pulse2.0,Human perception]
+  
+- title: "重建騎樓街景之研究<br>"
   image: "pic/騎樓.png"
   description:     
     <p>一張照片如何重繪街景3D模型？AI深度估計結合三角測量解讀城市空間的測繪研究。</p>
+  author: 洪名佑
   path: "https://youtu.be/RjGz9_InRCM?si=X2aKxfVIK-Wcy6LG"
-  categories: [GeoAI ]
+  categories: [GeoAI ,騎樓測繪,點雲建置]
+  
   
 - title: "python-note"
   image: "pic/ray-so-export.png"
